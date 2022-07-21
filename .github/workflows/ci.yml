@@ -48,7 +48,7 @@ jobs:
         run: |
           # Multiple HTML page
           cd target/docs/multipage/assets/styles
-          echo -e '\na{text-decoration:none;}p>code,strong>code{color: #d14 !important;background-color: #f5f5f5 !important;border: 1px solid #e1e1e8;white-space: nowrap;border-radius: 3px;}' >> asciidoctor.css  
+          echo -e '\na{text-decoration:none;}p>code,strong>code{color: #d14 !important;background-color: #f5f5f5 !important;border: 1px solid #e1e1e8;}' >> asciidoctor.css  
           for f in `ls *.css`;
           do
             fn="${f%.*}.min.css";
@@ -61,7 +61,7 @@ jobs:
         run: |
           # Single HTML page
           cd target/docs/html/assets/styles
-          echo -e '\na{text-decoration:none;}p>code,strong>code{color: #d14 !important;background-color: #f5f5f5 !important;border: 1px solid #e1e1e8;white-space: nowrap;border-radius: 3px;}' >> asciidoctor.css
+          echo -e '\na{text-decoration:none;}p>code,strong>code{color: #d14 !important;background-color: #f5f5f5 !important;border: 1px solid #e1e1e8;}' >> asciidoctor.css
           for f in `ls *.css`;
           do
             fn="${f%.*}.min.css";
