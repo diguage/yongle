@@ -1,0 +1,10 @@
+[#content]
+= 正文部分！
+
+这是正文部分！ `java`。
+
+[{java_source_attr}]
+----
+include::{source_basedir}/yongle/HelloWorld.java[]
+----
+
