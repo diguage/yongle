@@ -1,7 +1,9 @@
 [#content]
 = 正文部分！
 
-这是正文部分！ `java`。
+这是正文部分！
+
+行内高亮： `java`。
 
 [{java_source_attr}]
 ----
