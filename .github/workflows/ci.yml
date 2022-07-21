@@ -40,9 +40,12 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Compress Style 🍭
+      - name: Install Cssnano 🍻
         run: |
           npm install cssnano-cli --location=global
+
+      - name: Compress Multiple HTML Style 🍭
+        run: |
           # Multiple HTML page
           cd target/docs/multipage/assets/styles
           echo -e '\na{text-decoration:none;}p>code,strong>code{color: #d14 !important;background-color: #f5f5f5 !important;border: 1px solid #e1e1e8;white-space: nowrap;border-radius: 3px;}' >> asciidoctor.css  
@@ -53,6 +56,9 @@ jobs:
             rm -rf $f;
             mv $fn $f
           done
+
+      - name: Compress Single HTML Style 🍬
+        run: |
           # Single HTML page
           cd target/docs/html/assets/styles
           echo -e '\na{text-decoration:none;}p>code,strong>code{color: #d14 !important;background-color: #f5f5f5 !important;border: 1px solid #e1e1e8;white-space: nowrap;border-radius: 3px;}' >> asciidoctor.css
