@@ -16,7 +16,7 @@ font:
       bold: SourceCodePro-Semibold.ttf
       italic: SourceCodePro-It.ttf
       bold_italic: SourceCodePro-BoldIt.ttf
-    Emoji: Symbola.ttf
+    Emoji: NotoEmoji-Regular.ttf
 #SourceCodePro-Black.ttf
 #SourceCodePro-BlackIt.ttf
 #SourceCodePro-ExtraLight.ttf

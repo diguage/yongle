@@ -6,6 +6,8 @@ wget https://github.com/diguage/jdk-source-analysis/releases/download/source-fon
 
 tar -zxvf fonts.ttf.tgz
 
+wget https://github.com/diguage/open-fonts/releases/download/latest/NotoEmoji-Regular.ttf
+
 
 # Backup download URL: https://github.com/adobe-fonts/source-han-serif/archive/1.001R.zip
 
