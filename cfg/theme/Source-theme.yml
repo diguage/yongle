@@ -53,18 +53,18 @@ header:
   vertical-align: bottom
   recto:
     left:
-      content: '{document-title}'
+      content: '{chapter-title}'
     # center:
     #   content: '{page-number} / {page-count}'
     right:
-      content: '{chapter-title}'
+      content: '{section-title}'
   verso:
     left:
-      content: '{document-title}'
+      content: '{chapter-title}'
     # center:
     #   content: '{page-number} / {page-count}'
     right:
-      content: '{chapter-title}'
+      content: '{section-title}'
 
 footer:
   font-size: $base_font_size_small
