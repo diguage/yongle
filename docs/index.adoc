@@ -1,6 +1,6 @@
 = 文档模板
 D瓜哥 <https://www.diguage.com/>
-v0.1.0, 2017-07-24
+v0.1.0, 2022-07-21
 include::_attributes.adoc[]
 
 :sectnums!:

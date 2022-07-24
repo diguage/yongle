@@ -1,45 +1,48 @@
 extends: default-with-font-fallbacks
 
+# https://github.com/diguage/open-fonts/releases/tag/latest
 font:
   catalog:
     merge: true
     Source Han Serif SC:
-      normal: SourceHanSerifSC-Regular.ttf
-      bold: SourceHanSerifSC-Bold.ttf
-      italic: SourceHanSerifSC-Medium.ttf
-      bold_italic: SourceHanSerifSC-SemiBold.ttf
-#SourceHanSerifSC-Heavy.otf
-#SourceHanSerifSC-ExtraLight.otf
-#SourceHanSerifSC-Light.otf
+      normal: SourceHanSerifSC-Regular.otf
+      bold: SourceHanSerifSC-Bold.otf
+      italic: SourceHanSerifSC-Medium.otf
+      bold_italic: SourceHanSerifSC-SemiBold.otf
+    Source Han Sans SC:
+      normal: SourceHanSansSC-Regular.otf
+      bold: SourceHanSansSC-Bold.otf
+      italic: SourceHanSansSC-Medium.otf
+      bold_italic: SourceHanSansSC-Heavy.otf
     Source Code Pro:
-      normal: SourceCodePro-Regular.ttf
-      bold: SourceCodePro-Semibold.ttf
-      italic: SourceCodePro-It.ttf
-      bold_italic: SourceCodePro-BoldIt.ttf
+      normal: SourceCodePro-Regular.otf
+      bold: SourceCodePro-Semibold.otf
+      italic: SourceCodePro-It.otf
+      bold_italic: SourceCodePro-BoldIt.otf
     Emoji: NotoEmoji-Regular.ttf
-#SourceCodePro-Black.ttf
-#SourceCodePro-BlackIt.ttf
-#SourceCodePro-ExtraLight.ttf
-#SourceCodePro-ExtraLightIt.ttf
-#SourceCodePro-Light.ttf
-#SourceCodePro-LightIt.ttf
-#SourceCodePro-Medium.ttf
-#SourceCodePro-MediumIt.ttf
-#SourceCodePro-Bold.ttf
-#SourceCodePro-Semibold.ttf
-#SourceCodePro-SemiboldIt.ttf
   fallbacks:
     - Source Han Serif SC
+    - Source Han Sans SC
     - Emoji
 
 page:
   # NOTE multiply inches by 72 to get pt values
-  #margin: [0.5 * 72, 0.67 * 72, 0.67 * 72, 0.67 * 72]
+  # margin: [0.5 * 72, 0.67 * 72, 0.67 * 72, 0.67 * 72]
   margin: [0.9in, 0.8in, 0.9in, 0.8in]
 base:
   font_family: Source Han Serif SC
 codespan:
   font_family: Source Code Pro
+heading:
+  font_family: Source Han Sans SC
+  font_style: normal
+title_page:
+  title:
+    font_family: Source Han Sans SC
+    font_style: normal
+  subtitle:
+    font_family: Source Han Sans SC
+    font_style: normal
 
 header:
   font-size: $base_font_size_small
