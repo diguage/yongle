@@ -17,15 +17,18 @@
         <extra-enforcer-rules.version>1.6.0</extra-enforcer-rules.version>
 
         <asciidoctorj.version>2.5.4</asciidoctorj.version>
-        <asciidoctorj-pdf.version>2.1.4</asciidoctorj-pdf.version>
+        <asciidoctorj-pdf.version>2.1.6</asciidoctorj-pdf.version>
         <asciidoctorj-epub3.version>1.5.1</asciidoctorj-epub3.version>
         <asciidoctorj-diagram.version>2.2.3</asciidoctorj-diagram.version>
         <asciidoctor-maven-plugin.version>2.2.2</asciidoctor-maven-plugin.version>
         <gem-maven-plugin.version>2.0.1</gem-maven-plugin.version>
+        <download-maven-plugin.version>1.6.8</download-maven-plugin.version>
         <asciidoctor-multipage.version>0.0.16</asciidoctor-multipage.version>
         <asciidoctor-comment-links.version>0.0.1</asciidoctor-comment-links.version>
         <jruby.version>9.3.4.0</jruby.version>
-        <gem-path>${project.basedir}/cfg/gems</gem-path>
+        <gem.path>${project.basedir}/cfg/gems</gem.path>
+        <pdf-fonts.path>${project.basedir}/cfg/fonts</pdf-fonts.path>
+        <pdf-fonts.baseuri>https://github.com/diguage/open-fonts/releases/download/latest</pdf-fonts.baseuri>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -370,10 +373,10 @@
                     <jrubyVersion>${jruby.version}</jrubyVersion>
                     <!-- https://stackoverflow.com/a/11277228/951836 -->
                     <!-- GEM_HOME is where gems will be installed (by default). -->
-                    <gemHome>${gem-path}</gemHome>
+                    <gemHome>${gem.path}</gemHome>
                     <!-- GEM_PATH provides the locations where gems can be found. -->
                     <!-- Therefore GEM_PATH should include GEM_HOME -->
-                    <gemPath>${gem-path}</gemPath>
+                    <gemPath>${gem.path}</gemPath>
                 </configuration>
                 <executions>
                     <!-- Install required gems in target directory -->
@@ -383,6 +386,174 @@
                             <goal>initialize</goal>
                         </goals>
                         <phase>initialize</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.googlecode.maven-download-plugin</groupId>
+                <artifactId>download-maven-plugin</artifactId>
+                <version>${download-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>install-font-NotoColorEmoji</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/NotoEmoji-Regular.ttf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>f224032937e77448b2586b171ed7d031</md5>
+                        </configuration>
+                    </execution>
+
+                    <!-- 等宽字体 -->
+                    <execution>
+                        <id>install-font-SourceCodePro-Regular</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceCodePro-Regular.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>881bfa23a0fc625abe2a8c38b2a72180</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-SourceCodePro-Semibold</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceCodePro-Semibold.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>e09d6d82c6e77726b03f3929dd2b6961</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-SourceCodePro-It</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceCodePro-It.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>6fc0b73a8f4b42cc9ecb5154e3b45dcd</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-SourceCodePro-BoldIt</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceCodePro-BoldIt.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>5b7d949c95111f4a7166553db479e5e1</md5>
+                        </configuration>
+                    </execution>
+
+                    <!-- 中文字体 -->
+                    <execution>
+                        <id>install-font-SourceHanSerifSC-Regular</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceHanSerifSC-Regular.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>3990fae1c68e4144013f92273fca41a9</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-SourceHanSerifSC-Bold</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceHanSerifSC-Bold.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>9bb66a8d136498b323b3549f95a53935</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-SourceHanSerifSC-Medium</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceHanSerifSC-Medium.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>46f15d8b48f93010232fbdb46c36006b</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-SourceHanSerifSC-SemiBold</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceHanSerifSC-SemiBold.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>c27bc5f59edac6bd68d7a15d4f6a05f8</md5>
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>install-font-SourceHanSansSC-Regular</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceHanSansSC-Regular.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>56195441817e7172c4cd914388710f20</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-SourceHanSansSC-Bold</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceHanSansSC-Bold.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>c76f8a8f08293d0e1c5dc8302f7062aa</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-SourceHanSansSC-Medium</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceHanSansSC-Medium.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>ebc3cd485fe89cc90b38be33464894ae</md5>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>install-font-SourceHanSansSC-Heavy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>${pdf-fonts.baseuri}/SourceHanSansSC-Heavy.otf</url>
+                            <outputDirectory>${pdf-fonts.path}</outputDirectory>
+                            <md5>2dbb493c201153533bc0f92e93cee6af</md5>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
@@ -432,7 +603,7 @@
                             <backend>multipage_html5</backend>
                             <doctype>book</doctype>
 
-                            <gemPath>${gem-path}</gemPath>
+                            <gemPath>${gem.path}</gemPath>
                             <requires>
                                 <require>asciidoctor-multipage</require>
                                 <require>asciidoctor-comment-links</require>
@@ -460,7 +631,7 @@
                                 <toc>left</toc>
                             </attributes>
 
-                            <gemPath>${gem-path}</gemPath>
+                            <gemPath>${gem.path}</gemPath>
                             <requires>
                                 <require>asciidoctor-comment-links</require>
                             </requires>
