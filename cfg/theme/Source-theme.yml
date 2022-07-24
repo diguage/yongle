@@ -13,7 +13,6 @@ font:
       normal: SourceHanSansSC-Regular.otf
       bold: SourceHanSansSC-Bold.otf
       italic: SourceHanSansSC-Medium.otf
-#      medium: SourceHanSansSC-Medium.otf
       bold_italic: SourceHanSansSC-Heavy.otf
     Source Code Pro:
       normal: SourceCodePro-Regular.otf
@@ -36,11 +35,11 @@ codespan:
   font_family: Source Code Pro
 heading:
   font_family: Source Han Sans SC
-#  font_style: medium
+  font_style: normal
 title_page:
   title:
     font_family: Source Han Sans SC
-    font_style: bold
+    font_style: normal
   subtitle:
     font_family: Source Han Sans SC
     font_style: normal
