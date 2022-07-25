@@ -572,7 +572,7 @@
                         <basedir>${project.basedir}</basedir>
                         <source-highlighter>rouge</source-highlighter>
                         <rouge-style>github</rouge-style>
-                        <imagesdir>.</imagesdir>
+                        <imagesdir>${project.basedir}/docs</imagesdir>
                         <docinfo>true</docinfo>
                         <docinfodir>assets/tags</docinfodir>
                         <icons>font</icons>

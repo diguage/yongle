@@ -14,5 +14,67 @@ include::{source_basedir}/yongle/HelloWorld.java[]
 
 == 图片
 
+=== 外部图片
+
 plantuml::assets/diagrams/observer.puml[{diagram_attr}]
 
+[plantuml, {diagram_attr}]
+....
+@startuml
+listfonts This is a test. 这是一个测试。這是一個測試。
+@enduml
+....
+
+=== 文内图片
+
+[plantuml, {diagram_attr}]
+....
+@startuml
+
+skinparam nodesep 80
+skinparam titleFontSize 30
+title "**<b>装饰模式</b>**"
+
+abstract class Component {
+  + {abstract} operation() :void
+}
+note right: Component 是定义一个对象接口，\n可以给这些对象动态地添加职责。
+
+class ConcreteComponent {
+  + operation() :void
+}
+note "ConcreteComponent 是定义了\n一个具体的对象，也可以给这个\n对象添加一些职责。" as ccn
+ccn .. ConcreteComponent
+
+abstract class Decorator {
+  - component :Component
+  + {abstract} operation() :void
+}
+note "Decorator，装饰抽象类，\n继承了 Component，从外类\n来扩展 Component 的功能，\n但对于 Component 来说，\n是无需知道 Decorator 的存在的。" as dn
+Decorator .. dn
+
+class ConcreteDecoratorA {
+  + operation() :void
+}
+
+class ConcreteDecoratorB {
+  + operation() :void
+  - addBehavior() :void
+}
+note "ConcreteDecorator 就是具体的装饰对象，\n起到给 Component 添加职责的功能。" as cdn
+'cdn .. ConcreteDecoratorA
+'cdn .. ConcreteDecoratorB
+ConcreteDecoratorA .. cdn
+ConcreteDecoratorB .. cdn
+
+Decorator "-component" o-- Component
+
+Component <|-- ConcreteComponent
+Component <|-- Decorator
+Decorator <|-- ConcreteDecoratorA
+Decorator <|-- ConcreteDecoratorB
+
+skinparam footerFontSize 20
+footer D瓜哥 · https://www.diguage.com · 出品
+@enduml
+....
