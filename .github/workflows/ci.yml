@@ -25,6 +25,11 @@ jobs:
         run: |
           sudo apt update -y -m
           sudo apt install -y graphviz
+          sudo apt install -y python3-pip
+          pip3 install seqdiag
+          pip3 install blockdiag
+          pip3 install actdiag
+          pip3 install nwdiag
 
       - name: Install font 🎃
         run: |
