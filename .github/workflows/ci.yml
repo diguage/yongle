@@ -21,15 +21,31 @@ jobs:
           java-version: '17'
           distribution: 'corretto'
 
+      # https://github.com/actions/setup-node
+      - name: Setup Node.js 🕸
+        uses: actions/setup-node@v3
+        with:
+          # https://github.com/nvm-sh/nvm#long-term-support
+          node-version: 'lts/*'
+
       - name: Install Graphviz 🐰
         run: |
           sudo apt update -y -m
-          sudo apt install -y graphviz
           sudo apt install -y python3-pip
+          # https://graphviz.org/
+          sudo apt install -y graphviz
+          # http://blockdiag.com/en/seqdiag/index.html
           pip3 install seqdiag
+          # http://blockdiag.com/en/blockdiag/index.html
           pip3 install blockdiag
+          # http://blockdiag.com/en/actdiag/index.html
           pip3 install actdiag
+          # http://blockdiag.com/en/nwdiag/index.html
           pip3 install nwdiag
+          # https://github.com/Deep-Symmetry/bytefield-svg
+          npm install -g bytefield-svg
+          # https://github.com/gtudan/bpmn-js-cmd
+          npm install -g bpmn-js-cmd
 
       - name: Install font 🎃
         run: |
@@ -51,12 +67,6 @@ jobs:
         run: |
           cd target/docs/multipage/
           find . -name "*.html" | grep -v "preface.html" | xargs -I {} sed -i "s|<div id=\"content\">|<div id=\"content\"><div class=\"sect2\"><h3 id=\"_友情支持\">友情支持</h3><div class=\"paragraph\"><p>如果您觉得这个笔记对您有所帮助，看在D瓜哥码这么多字的辛苦上，请友情支持一下，D瓜哥感激不尽，😜</p></div><table class=\"tableblock frame-none grid-all stretch\"><colgroup><col style=\"width: 50%;\"><col style=\"width: 50%;\"></colgroup><tbody><tr><td class=\"tableblock halign-center valign-top\"><p class=\"tableblock\"><span class=\"image\"><img src=\"assets/images/alipay.png\" alt=\"支付宝\" width=\"85%\" title=\"支付宝\"></span></p></td><td class=\"tableblock halign-center valign-top\"><p class=\"tableblock\"><span class=\"image\"><img src=\"assets/images/wxpay.jpg\" alt=\"微信\" width=\"85%\" title=\"微信\"></span></p></td></tr></tbody></table><div class=\"paragraph\"><p>有些打赏的朋友希望可以加个好友，欢迎关注D 瓜哥的微信公众号，这样就可以通过公众号的回复直接给我发信息。</p></div><div class=\"paragraph\"><p><span class=\"image\"><img src=\"assets/images/wx-jikerizhi.png\" alt=\"wx jikerizhi\" width=\"98%\"></span></p></div><div class=\"admonitionblock tip\"><table><tbody><tr><td class=\"icon\"><i class=\"fa icon-tip\" title=\"Tip\"></i></td><td class=\"content\"><strong>公众号的微信号是: <code>jikerizhi</code></strong>。<em>因为众所周知的原因，有时图片加载不出来。 如果图片加载不出来可以直接通过搜索微信号来查找我的公众号。</em></td></tr></tbody></table></div></div>|" {}
-
-      # https://github.com/actions/setup-node
-      - name: Setup Node.js 🕸
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
 
       - name: Install Cssnano 🍻
         run: |
