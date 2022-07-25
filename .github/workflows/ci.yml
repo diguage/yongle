@@ -26,6 +26,12 @@ jobs:
           sudo apt update -y -m
           sudo apt install -y graphviz
 
+      - name: Install font 🎃
+        run: |
+          mkdir ~/.fonts
+          cd ~/.fonts
+          wget https://github.com/diguage/open-fonts/releases/download/latest/SourceHanSerifSC-Regular.otf
+
       - name: Build 🏗
         run: mvn clean package
 
