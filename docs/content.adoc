@@ -12,3 +12,7 @@
 include::{source_basedir}/yongle/HelloWorld.java[]
 ----
 
+== 图片
+
+plantuml::assets/diagrams/observer.puml[{diagram_attr}]
+

@@ -590,6 +590,7 @@
                         <html_src_attr>source%nowrap,html,{source_attr}</html_src_attr>
                         <image_attr>align="center",width=100%</image_attr>
                         <diagram_attr>format=svg,align="center",width=90%</diagram_attr>
+                        <plantumlconfig>${project.basedir}/cfg/plantuml.cfg</plantumlconfig>
                     </attributes>
                 </configuration>
                 <executions>
@@ -681,7 +682,6 @@
                             <outputDirectory>${project.build.directory}/docs/pdf</outputDirectory>
                             <attributes>
                                 <allow-uri-read/>
-                                <plantumlconfig>${project.basedir}/cfg/plantuml.cfg</plantumlconfig>
                                 <pdf-fontsdir>${project.basedir}/cfg/fonts</pdf-fontsdir>
                                 <pdf-themesdir>${project.basedir}/cfg/theme</pdf-themesdir>
                                 <!-- Set Source theme -->
