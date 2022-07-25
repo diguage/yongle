@@ -36,7 +36,7 @@ jobs:
           mkdir $HOME/.fonts
           cd $HOME/.fonts
           wget https://github.com/diguage/open-fonts/releases/download/latest/SourceHanSerifSC-Regular.otf
-          echo "[seqdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" > $HOME/.blockdiagrc
+          echo -e "[seqdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" > $HOME/.blockdiagrc
           # Check result
           ls -lh $HOME/.fonts 
           cat $HOME/.blockdiagrc
