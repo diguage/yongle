@@ -1,4 +1,4 @@
-[#content]
+[#content-part]
 = 正文部分
 
 这是正文部分！
@@ -18,12 +18,18 @@ include::{source_basedir}/yongle/HelloWorld.java[]
 
 plantuml::assets/diagrams/observer.puml[{diagram_attr}]
 
-[plantuml, {diagram_attr}]
-....
-@startuml
-listfonts This is a test. 这是一个测试。這是一個測試。
-@enduml
-....
+// 查看支持字体
+//
+//[plantuml, {diagram_attr}]
+//....
+//@startuml
+//listfonts This is a test. 这是一个测试。這是一個測試。
+//@enduml
+//....
+
+=== 序列图
+
+seqdiag::assets/diagrams/seq.diag[{diagram_attr}]
 
 === 文内图片
 

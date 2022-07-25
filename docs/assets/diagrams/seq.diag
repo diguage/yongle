@@ -1,0 +1,5 @@
+seqdiag {
+  browser  -> webserver [label = "GET /seqdiag/svg/base64", note = "\n测试\n_"];
+  webserver  => processor [label = "Convert text to image", leftnote = "\n测试\n_"];
+  browser <-- webserver;
+}
