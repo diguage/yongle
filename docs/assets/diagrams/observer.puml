@@ -1,7 +1,5 @@
 @startuml
-skinparam nodesep 80
-skinparam titleFontSize 30
-title "**<b>观察者模式</b>**"
+title "**观察者模式**"
 
 abstract class Subject {
   - observer :Observer
@@ -28,6 +26,5 @@ Observer <|-- ConcreteObserver
 
 ConcreteObserver "-subject" o-left- ConcreteSubject
 
-skinparam footerFontSize 20
 footer D瓜哥 · https://www.diguage.com · 出品
 @enduml

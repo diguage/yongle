@@ -670,6 +670,7 @@
                             <outputDirectory>${project.build.directory}/docs/pdf</outputDirectory>
                             <attributes>
                                 <allow-uri-read/>
+                                <diagram_attr>format=png,align="center",width=90%</diagram_attr>
                                 <pdf-fontsdir>${project.basedir}/cfg/fonts</pdf-fontsdir>
                                 <pdf-themesdir>${project.basedir}/cfg/theme</pdf-themesdir>
                                 <!-- Set Source theme -->

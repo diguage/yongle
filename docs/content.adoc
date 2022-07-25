@@ -19,7 +19,6 @@ include::{source_basedir}/yongle/HelloWorld.java[]
 plantuml::assets/diagrams/observer.puml[{diagram_attr}]
 
 // 查看支持字体
-//
 //[plantuml, {diagram_attr}]
 //....
 //@startuml
@@ -36,10 +35,7 @@ seqdiag::assets/diagrams/seq.diag[{diagram_attr}]
 [plantuml, {diagram_attr}]
 ....
 @startuml
-
-skinparam nodesep 80
-skinparam titleFontSize 30
-title "**<b>装饰模式</b>**"
+title "**装饰模式**"
 
 abstract class Component {
   + {abstract} operation() :void
@@ -80,7 +76,6 @@ Component <|-- Decorator
 Decorator <|-- ConcreteDecoratorA
 Decorator <|-- ConcreteDecoratorB
 
-skinparam footerFontSize 20
 footer D瓜哥 · https://www.diguage.com · 出品
 @enduml
 ....
