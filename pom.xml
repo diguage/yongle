@@ -566,11 +566,8 @@
                 <configuration>
                     <sourceDirectory>docs</sourceDirectory>
                     <sourceDocumentName>index.adoc</sourceDocumentName>
-                    <requires>
-                        <require>asciidoctor-diagram</require>
-                    </requires>
                     <attributes>
-                        <sourcedir>${project.build.sourceDirectory}/com/diguage/cafe/jiadao</sourcedir>
+                        <sourcedir>${project.build.sourceDirectory}/com/diguage/yongle</sourcedir>
                         <basedir>${project.basedir}</basedir>
                         <source-highlighter>rouge</source-highlighter>
                         <rouge-style>github</rouge-style>
@@ -608,6 +605,7 @@
 
                             <gemPath>${gem.path}</gemPath>
                             <requires>
+                                <require>asciidoctor-diagram</require>
                                 <require>asciidoctor-multipage</require>
                                 <require>asciidoctor-comment-links</require>
                             </requires>
@@ -636,42 +634,30 @@
 
                             <gemPath>${gem.path}</gemPath>
                             <requires>
+                                <require>asciidoctor-diagram</require>
                                 <require>asciidoctor-comment-links</require>
                             </requires>
                         </configuration>
                     </execution>
 
-                    <!--<execution>-->
-                    <!--    <id>generate-epub</id>-->
-                    <!--    <phase>package</phase>-->
-                    <!--    <goals>-->
-                    <!--        <goal>process-asciidoc</goal>-->
-                    <!--    </goals>-->
-                    <!--    <configuration>-->
-                    <!--        <backend>epub3</backend>-->
-                    <!--        <sourceDocumentName>index.adoc</sourceDocumentName>-->
-                    <!--        <outputDirectory>${project.build.directory}/docs/epub</outputDirectory>-->
-                    <!--        <attributes>-->
-                    <!--            <source-highlighter>coderay</source-highlighter>-->
-                    <!--        </attributes>-->
-                    <!--    </configuration>-->
-                    <!--</execution>-->
-
-                    <!--<execution>-->
-                    <!--    <id>generate-kf8</id>-->
-                    <!--    <phase>package</phase>-->
-                    <!--    <goals>-->
-                    <!--        <goal>process-asciidoc</goal>-->
-                    <!--    </goals>-->
-                    <!--    <configuration>-->
-                    <!--        <backend>epub3</backend>-->
-                    <!--        <sourceDocumentName>index.adoc</sourceDocumentName>-->
-                    <!--        <outputDirectory>${project.build.directory}/docs/kf8</outputDirectory>-->
-                    <!--        <attributes>-->
-                    <!--            <ebook-format>kf8</ebook-format>-->
-                    <!--        </attributes>-->
-                    <!--    </configuration>-->
-                    <!--</execution>-->
+                    <execution>
+                        <id>generate-epub</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>epub3</backend>
+                            <sourceDocumentName>index.adoc</sourceDocumentName>
+                            <outputDirectory>${project.build.directory}/docs/epub</outputDirectory>
+                            <attributes>
+                                <source-highlighter>coderay</source-highlighter>
+                            </attributes>
+                            <requires>
+                                <require>asciidoctor-diagram</require>
+                            </requires>
+                        </configuration>
+                    </execution>
 
                     <execution>
                         <id>generate-pdf</id>
@@ -701,6 +687,9 @@
                                 <!--<media>prepress</media>-->
                                 <!--<optimize>prepress</optimize>-->
                             </attributes>
+                            <requires>
+                                <require>asciidoctor-diagram</require>
+                            </requires>
                         </configuration>
                     </execution>
                 </executions>
