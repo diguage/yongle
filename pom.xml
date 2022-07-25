@@ -20,6 +20,8 @@
         <asciidoctorj-pdf.version>2.1.6</asciidoctorj-pdf.version>
         <asciidoctorj-epub3.version>1.5.1</asciidoctorj-epub3.version>
         <asciidoctorj-diagram.version>2.2.3</asciidoctorj-diagram.version>
+        <asciidoctorj-diagram-plantuml.version>1.2022.5</asciidoctorj-diagram-plantuml.version>
+        <asciidoctorj-diagram-ditaamini.version>1.0.3</asciidoctorj-diagram-ditaamini.version>
         <asciidoctor-maven-plugin.version>2.2.2</asciidoctor-maven-plugin.version>
         <gem-maven-plugin.version>2.0.1</gem-maven-plugin.version>
         <download-maven-plugin.version>1.6.8</download-maven-plugin.version>
@@ -572,7 +574,7 @@
                         <basedir>${project.basedir}</basedir>
                         <source-highlighter>rouge</source-highlighter>
                         <rouge-style>github</rouge-style>
-                        <imagesdir>${project.basedir}/docs</imagesdir>
+                        <imagesdir>.</imagesdir>
                         <docinfo>true</docinfo>
                         <docinfodir>assets/tags</docinfodir>
                         <icons>font</icons>
@@ -722,6 +724,16 @@
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj-diagram</artifactId>
                         <version>${asciidoctorj-diagram.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram-plantuml</artifactId>
+                        <version>${asciidoctorj-diagram-plantuml.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram-ditaamini</artifactId>
+                        <version>${asciidoctorj-diagram-ditaamini.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.jruby</groupId>
