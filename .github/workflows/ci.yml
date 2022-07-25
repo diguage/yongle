@@ -33,9 +33,10 @@ jobs:
 
       - name: Install font 🎃
         run: |
-          mkdir ~/.fonts
-          cd ~/.fonts
+          mkdir $HOME/.fonts
+          cd $HOME/.fonts
           wget https://github.com/diguage/open-fonts/releases/download/latest/SourceHanSerifSC-Regular.otf
+          echo "[seqdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" > $HOME/.blockdiagrc
 
       - name: Build 🏗
         run: mvn clean package
