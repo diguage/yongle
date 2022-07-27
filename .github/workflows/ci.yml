@@ -46,6 +46,8 @@ jobs:
           npm install -g bytefield-svg
           # https://github.com/gtudan/bpmn-js-cmd
           npm install -g bpmn-js-cmd
+          # https://plantuml.com/zh/
+          sudo apt -y install plantuml
 
       - name: Install font 🎃
         run: |
