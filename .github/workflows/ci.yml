@@ -65,6 +65,7 @@ jobs:
           echo -e "\n[nwdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
           # Check result
           ls -lh $HOME/.fonts 
+          fc-list
           cat $HOME/.blockdiagrc
 
       - name: Build 🏗
