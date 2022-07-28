@@ -10,7 +10,6 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-项目模板
 
 == 友情支持
 
@@ -27,3 +26,16 @@ endif::[]
 image::docs/assets/images/wx-jikerizhi.png[align="center",width=98%]
 
 TIP: **公众号的微信号是: `jikerizhi`**。__因为众所周知的原因，有时图片加载不出来。如果图片加载不出来可以直接通过搜索微信号来查找我的公众号。__
+
+
+== 项目说明
+
+这是一个项目模板，方便基于该项目生成新的项目，复用一些以前积累的比较好的配置。该项目提供的特性如下：
+
+. 配置好了 AsciiDoctor 插件，可以自动将 AsciiDoctor 转换成 HTML、Multipages（HTML）、PDF 和 ePub 电子书。
+.. 重点解决了生成 PDF 时的乱码问题；
+.. 解决了生成 PlantUML 图片时，文字挤压的问题；
+.. 解决了 blockdiag 生成图片时，汉字乱码的问题；
+. 配置好了 GitHub Action 可以自动将文档推送到 GitHub Pages。（可能还需要在 GitHub 上做一下设置。）
+. 对一些“过期依赖”做了检查，出现则报错中止编译。
+.

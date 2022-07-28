@@ -51,25 +51,32 @@ jobs:
 
       - name: Install font 🎃
         run: |
-          mkdir $HOME/.fonts
-          cd $HOME/.fonts
-          wget https://github.com/diguage/open-fonts/releases/download/latest/SourceHanSerifSC-Regular.otf
-          wget https://github.com/diguage/open-fonts/releases/download/latest/SourceHanSansSC-Regular.otf
-          wget https://github.com/diguage/open-fonts/releases/download/latest/SourceCodePro-Regular.otf
-          wget https://github.com/diguage/open-fonts/releases/download/latest/SourceCodePro-It.otf
-          wget https://github.com/diguage/open-fonts/releases/download/latest/SourceCodePro-Bold.otf
-          wget https://github.com/diguage/open-fonts/releases/download/latest/SourceCodePro-BoldIt.otf
-          echo -e "[seqdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" > $HOME/.blockdiagrc
-          echo -e "\n[blockdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
-          echo -e "\n[actdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
-          echo -e "\n[nwdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
+          # Install font in Maven
+          # mkdir $HOME/.fonts
+          # cd $HOME/.fonts
+          # wget https://github.com/diguage/open-fonts/releases/download/latest/SourceHanSerifSC-Regular.otf
+          # wget https://github.com/diguage/open-fonts/releases/download/latest/SourceHanSansSC-Regular.otf
+          # wget https://github.com/diguage/open-fonts/releases/download/latest/SourceCodePro-Regular.otf
+          # wget https://github.com/diguage/open-fonts/releases/download/latest/SourceCodePro-It.otf
+          # wget https://github.com/diguage/open-fonts/releases/download/latest/SourceCodePro-Bold.otf
+          # wget https://github.com/diguage/open-fonts/releases/download/latest/SourceCodePro-BoldIt.otf
+          # echo -e "[seqdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" > $HOME/.blockdiagrc
+          # echo -e "\n[blockdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
+          # echo -e "\n[actdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
+          # echo -e "\n[nwdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
           # Check result
-          ls -lh $HOME/.fonts 
+          # ls -lh $HOME/.fonts 
           fc-list
-          cat $HOME/.blockdiagrc
+          # cat $HOME/.blockdiagrc
 
       - name: Build 🏗
         run: mvn clean package
+
+      - name: Check font 🔍
+        run: |
+          ls -lh $HOME/.fonts 
+          fc-list
+          cat $HOME/.blockdiagrc
 
       - name: Add Reward Qrcode 💰
         run: |

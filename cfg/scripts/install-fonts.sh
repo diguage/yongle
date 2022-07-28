@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-fonts_path=../.fonts/*
+base_path=$(cd $(dirname $BASH_SOURCE) && pwd)
+
+fonts_path=$(cd ${base_path}/.. && pwd)/fonts
 
 if [ "$(uname -s)" == "Darwin" ]; then
     # Do something under Mac OS X platform
@@ -15,14 +17,45 @@ elif [ "$(uname -s)" == "Linux" ]; then
 #    # Do something under 64 bits Windows NT platform
 fi
 
-echo "fonts_path=${fonts_path}"
-echo "target_path=${target_path}"
+if [ ! -d "${target_path}" ]; then
+  echo "mkdir ${target_path}"
+  mkdir -p $target_path
+fi
 
-#mkdir $target_path
-#
-#cp $fonts_path $target_path
+for ffile in `ls ${fonts_path}`;
+do
+  if [[ ! -f "${target_path}/${ffile}" ]]; then
+    echo "install $ffile"
+    cp "${fonts_path}/${ffile}" "${target_path}/${ffile}"
+  fi
+done
 
-#echo -e "[seqdiag]\nfontpath = $target_path/SourceHanSerifSC-Regular.otf" > $HOME/.blockdiagrc
-#echo -e "\n[blockdiag]\nfontpath = $target_path/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
-#echo -e "\n[actdiag]\nfontpath = $target_path/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
-#echo -e "\n[nwdiag]\nfontpath = $target_path/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
+## Config font for BlockDiagram
+blockdiagrc=${HOME}/.blockdiagrc
+
+if [[ -f "${target_path}/SourceHanSerifSC-Regular.otf" ]]; then
+  if [[ ! -f "${blockdiagrc}" ]]; then
+    echo "create file: ${blockdiagrc}"
+    touch ${blockdiagrc}
+  fi
+fi
+
+if ! grep -q "seqdiag" "${blockdiagrc}"; then
+  echo "config font for seqdiag."
+  echo -e "\n[seqdiag]\nfontpath = ${target_path}/SourceHanSerifSC-Regular.otf" >> ${blockdiagrc}
+fi
+
+if ! grep -q "blockdiag" "${blockdiagrc}"; then
+  echo "config font for blockdiag."
+  echo -e "\n[blockdiag]\nfontpath = ${target_path}/SourceHanSerifSC-Regular.otf" >> ${blockdiagrc}
+fi
+
+if ! grep -q "actdiag" "${blockdiagrc}"; then
+  echo "config font for actdiag."
+  echo -e "\n[actdiag]\nfontpath = ${target_path}/SourceHanSerifSC-Regular.otf" >> ${blockdiagrc}
+fi
+
+if ! grep -q "nwdiag" "${blockdiagrc}"; then
+  echo "config font for nwdiag."
+  echo -e "\n[nwdiag]\nfontpath = ${target_path}/SourceHanSerifSC-Regular.otf" >> ${blockdiagrc}
+fi
