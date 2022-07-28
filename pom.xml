@@ -25,6 +25,7 @@
         <asciidoctor-maven-plugin.version>2.2.2</asciidoctor-maven-plugin.version>
         <gem-maven-plugin.version>2.0.1</gem-maven-plugin.version>
         <download-maven-plugin.version>1.6.8</download-maven-plugin.version>
+        <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
         <asciidoctor-multipage.version>0.0.16</asciidoctor-multipage.version>
         <asciidoctor-comment-links.version>0.0.1</asciidoctor-comment-links.version>
         <jruby.version>9.3.4.0</jruby.version>
@@ -555,6 +556,24 @@
                             <url>${pdf-fonts.baseuri}/SourceHanSansSC-Heavy.otf</url>
                             <outputDirectory>${pdf-fonts.path}</outputDirectory>
                             <md5>2dbb493c201153533bc0f92e93cee6af</md5>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>install-fonts-and-generate-config-file</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>bash</executable>
+                            <commandlineArgs>${project.basedir}/cfg/scripts/install-fonts.sh</commandlineArgs>
                         </configuration>
                     </execution>
                 </executions>
