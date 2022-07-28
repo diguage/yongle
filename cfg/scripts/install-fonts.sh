@@ -4,17 +4,32 @@ base_path=$(cd $(dirname $BASH_SOURCE) && pwd)
 
 fonts_path=$(cd ${base_path}/.. && pwd)/fonts
 
-if [ "$(uname -s)" == "Darwin" ]; then
+case "$(uname -s)" in
+
+  Darwin)
     # Do something under Mac OS X platform
     # https://apple.stackexchange.com/a/240382
     target_path=$HOME/Library/Fonts
-elif [ "$(uname -s)" == "Linux" ]; then
+    ;;
+
+  Linux)
     # Do something under GNU/Linux platform
     target_path=$HOME/.fonts
-#elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
-#    # Do something under 32 bits Windows NT platform
-#elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
-#    # Do something under 64 bits Windows NT platform
+    ;;
+
+  CYGWIN*|MINGW32*|MSYS*|MINGW*)
+    echo 'MS Windows'
+    ;;
+
+  *)
+    echo 'Other OS'
+    ;;
+esac
+
+if [ -z "${target_path}" ]
+then
+  echo "\$target_path is empty."
+  exit 1;
 fi
 
 if [ ! -d "${target_path}" ]; then
