@@ -4,7 +4,7 @@
 :source-language: java
 :rouge-style: github
 :linkcss:
-:toc: left
+// :toc: left
 :toclevels: 4
 :sectnumlevels: 4
 :version-label: V

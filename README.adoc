@@ -38,4 +38,31 @@ TIP: **公众号的微信号是: `jikerizhi`**。__因为众所周知的原因�
 .. 解决了 blockdiag 生成图片时，汉字乱码的问题；
 . 配置好了 GitHub Action 可以自动将文档推送到 GitHub Pages。（可能还需要在 GitHub 上做一下设置。）
 . 对一些“过期依赖”做了检查，出现则报错中止编译。
-.
+
+
+== 将 HTML 转化成 PDF
+
+在 `pom.xml` 中已经内置了直接转出 PDF 的处理流程（为了平时的构建速度，默认是注释掉的）。但是，经过对比发现，使用 AsciiDoctor PDF 转出的 PDF，如果将 Asciidoctor Diagram 的图片格式设置为 PNG，那么图片模糊不清，放大以后还是看不清楚；如果设置为 SVG，则图片会多出一些不必要的线框。所以，推荐使用 HTML + https://wkhtmltopdf.org/[wkhtmltopdf]。流程如下：
+
+. 使用上面“使用方法”中的办法，将文档转化成 HTML，然后启动 HTTP Server，确保可以在浏览器中通过 <http://localhost:8888/target/docs/html/index.html> 查看到文档内容。
+. 使用如下命令，将文档转化成 PDF：
++
+--
+[source,bash]
+----
+$ wkhtmltopdf --page-size A4 \
+              --header-left "文档标题" \
+              --header-right "（`date '+%Y-%m-%d'`·试用版）" \
+              --header-spacing 3 \
+              --header-font-size 10 \
+              --footer-spacing 4 \
+              --footer-left "D瓜哥 · https://www.diguage.com/" \
+              --footer-right '[page] / [toPage]' \
+              --footer-font-size 10 \
+              --margin-top 25mm \
+              --margin-bottom 25mm \
+              --margin-left 20mm \
+              --margin-right 20mm \
+              http://localhost:8888/target/docs/html/index.html 文档标题.pdf
+----
+--
