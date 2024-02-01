@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="description" content="文档模板">
+<meta name="keywords" content="文档">
+<meta name="author" content="D瓜哥">
+<title>文档模板</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="assets/styles/asciidoctor.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/styles/rouge-github.css">
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="content-part" class="book toc2 toc-left">
+<div id="header">
+<h1>文档模板</h1>
+<div class="details">
+<span id="author" class="author">D瓜哥</span><br>
+<span id="email" class="email"><a href="https://www.diguage.com/" class="bare">https://www.diguage.com/</a></span><br>
+<span id="revdate">2024-02-01</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">目录</div>
+<p><span class="toc-root"><a href="index.html">文档模板</a></span></p><ul class="sectlevel1">
+<li><a href="preface.html">前言</a>
+</li>
+<li><a href="content-part.html"><span class="toc-current"> 1. 正文部分</span></a>
+<ul class="sectlevel2">
+<li><a href="content-part.html#_代码高亮">1.1. 代码高亮</a>
+</li>
+<li><a href="content-part.html#_图片">1.2. 图片</a>
+<ul class="sectlevel3">
+<li><a href="content-part.html#_外部图片">1.2.1. 外部图片</a>
+</li>
+<li><a href="content-part.html#_序列图">1.2.2. 序列图</a>
+</li>
+<li><a href="content-part.html#_文内图片">1.2.3. 文内图片</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="license.html">附录 B: 版权声明</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content"><div class="sect2"><h3 id="_友情支持">友情支持</h3><div class="paragraph"><p>如果您觉得这个笔记对您有所帮助，看在D瓜哥码这么多字的辛苦上，请友情支持一下，D瓜哥感激不尽，😜</p></div><table class="tableblock frame-none grid-all stretch"><colgroup><col style="width: 50%;"><col style="width: 50%;"></colgroup><tbody><tr><td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="assets/images/alipay.png" alt="支付宝" width="85%" title="支付宝"></span></p></td><td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="assets/images/wxpay.jpg" alt="微信" width="85%" title="微信"></span></p></td></tr></tbody></table><div class="paragraph"><p>有些打赏的朋友希望可以加个好友，欢迎关注D 瓜哥的微信公众号，这样就可以通过公众号的回复直接给我发信息。</p></div><div class="paragraph"><p><span class="image"><img src="assets/images/wx-jikerizhi.png" alt="wx jikerizhi" width="98%"></span></p></div><div class="admonitionblock tip"><table><tbody><tr><td class="icon"><i class="fa icon-tip" title="Tip"></i></td><td class="content"><strong>公众号的微信号是: <code>jikerizhi</code></strong>。<em>因为众所周知的原因，有时图片加载不出来。 如果图片加载不出来可以直接通过搜索微信号来查找我的公众号。</em></td></tr></tbody></table></div></div>
+<div class="sect1">
+<h2 id="content-part"><a class="anchor" href="#content-part"></a> 1. 正文部分</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>这是正文部分！</p>
+</div>
+<div class="paragraph">
+<p>行内高亮： <code>java</code>。</p>
+</div>
+<div class="sect2">
+<h3 id="_代码高亮"><a class="anchor" href="#_代码高亮"></a>1.1. 代码高亮</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="java"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+</pre></td><td class="code"><pre><span class="kn">package</span> <span class="nn">com.diguage.yongle</span><span class="o">;</span>
+
+<span class="cm">/**
+ * @author D瓜哥 · https://www.diguage.com
+ * @since 2022-07-21 20:50:45
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello, D瓜哥 · https://www.diguage.com"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_图片"><a class="anchor" href="#_图片"></a>1.2. 图片</h3>
+<div class="sect3">
+<h4 id="_外部图片"><a class="anchor" href="#_外部图片"></a>1.2.1. 外部图片</h4>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./observer.svg" alt="Diagram" width="90%" height="709">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_序列图"><a class="anchor" href="#_序列图"></a>1.2.2. 序列图</h4>
+<div class="listingblock">
+<div class="content">
+<pre>Failed to generate image: seqdiag failed: ERROR: 'FreeTypeFont' object has no attribute 'getsize'
+
+seqdiag {
+  edge_length = 200;  // default value is 192
+  default_fontsize = 14;  // default value is 11
+
+  browser  -&gt; webserver [label = "GET /seqdiag/svg/base64", note = "\n测试\n_"];
+  webserver  =&gt; processor [label = "Convert text to image", leftnote = "\n测试\n_"];
+  browser &lt;-- webserver;
+
+=== D瓜哥 · https://www.diguage.com · 出品 ===
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_文内图片"><a class="anchor" href="#_文内图片"></a>1.2.3. 文内图片</h4>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./diag-plantuml-md5-16f03036519bcb352ad79a547f8833b6.svg" alt="Diagram" width="90%" height="725">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="preface.html">前言</a> | ↑ Up: <a href="index.html">文档模板</a> | Next: <a href="license.html">附录 A: 版权声明</a> →</p>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+最后更新时间 2024-02-01 03:25:35 UTC
+</div>
+</div>
+</body>
+</html>
