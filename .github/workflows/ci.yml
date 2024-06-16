@@ -10,20 +10,21 @@ jobs:
     steps:
       # https://github.com/actions/checkout
       - name: Checkout 🛎️
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
 
       # https://github.com/actions/setup-java
-      - name: Set up JDK 17 ☕️
-        uses: actions/setup-java@v3
+      - name: Set up JDK 21 ☕️
+        uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '21'
           distribution: 'corretto'
+          cache: 'maven'
 
       # https://github.com/actions/setup-node
       - name: Setup Node.js 🕸
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           # https://github.com/nvm-sh/nvm#long-term-support
           node-version: 'lts/*'
