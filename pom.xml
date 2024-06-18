@@ -119,16 +119,15 @@
                     </additionalJOptions>
                     <!--<overview>src/main/java/overview.adoc</overview>-->
                     <additionalOptions>
-                        --base-dir ${project.basedir}
-                        <!--TODO: How to use asciidoctor-diagram?-->
-                        <!-- Throw error! -->
-                        --gem-path ${gem.path}
-                        --require asciidoctor-diagram,
-                        --attribute "stem=latexmath"
-                        --attribute "icons=font"
-                        --attribute "name=${project.name}"
-                        --attribute "version=${project.version}"
-                        --attribute "title-link=https://www.diguage.com/[${project.name} ${project.version}|地瓜哥]"
+                        <additionalOption>--base-dir ${project.basedir}</additionalOption>
+                        <!--Throw error!  TODO: How to use asciidoctor-diagram?-->
+                        <additionalOption>--gem-path ${gem.path}</additionalOption>
+                        <additionalOption>--require asciidoctor-diagram</additionalOption>
+                        <additionalOption>--attribute "stem=latexmath"</additionalOption>
+                        <additionalOption>--attribute "icons=font"</additionalOption>
+                        <additionalOption>--attribute "name=${project.name}"</additionalOption>
+                        <additionalOption>--attribute "version=${project.version}"</additionalOption>
+                        <additionalOption>--attribute "title-link=https://www.diguage.com/[${project.name} ${project.version}|地瓜哥]"</additionalOption>
                     </additionalOptions>
                     <additionalDependencies>
                         <additionalDependency>
