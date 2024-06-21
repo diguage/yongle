@@ -8,6 +8,7 @@
     <groupId>com.diguage</groupId>
     <artifactId>yongle</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <name>永乐</name>
     <description>yongle，永乐。取名至《永乐大典》。</description>
     <url>https://www.diguage.com/</url>
 
@@ -49,6 +50,12 @@
             <artifactId>asciidoctor-diagram</artifactId>
             <version>${asciidoctor-diagram.version}</version>
             <type>gem</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>rubygems</groupId>
+                    <artifactId>asciidoctor</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>rubygems</groupId>
@@ -123,11 +130,14 @@
                         <!--Throw error!  TODO: How to use asciidoctor-diagram?-->
                         <additionalOption>--gem-path ${gem.path}</additionalOption>
                         <additionalOption>--require asciidoctor-diagram</additionalOption>
+                        <!-- TODO 没有生效！ -->
+                        <additionalOption>--require asciidoctor-comment-links</additionalOption>
+                        <!-- 经测试，这些参数值确实可以传递到 JavaDoc 中 -->
                         <additionalOption>--attribute "stem=latexmath"</additionalOption>
                         <additionalOption>--attribute "icons=font"</additionalOption>
                         <additionalOption>--attribute "name=${project.name}"</additionalOption>
                         <additionalOption>--attribute "version=${project.version}"</additionalOption>
-                        <additionalOption>--attribute "title-link=https://www.diguage.com/[${project.name} ${project.version}|地瓜哥]"</additionalOption>
+                        <additionalOption>--attribute "title-link=https://www.diguage.com/[${project.name}/${project.version} | 地瓜哥]"</additionalOption>
                     </additionalOptions>
                     <additionalDependencies>
                         <additionalDependency>
