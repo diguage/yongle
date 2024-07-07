@@ -23,6 +23,8 @@
         <asciidoctorj-epub3.version>2.1.3</asciidoctorj-epub3.version>
         <asciidoctorj-diagram.version>2.3.0</asciidoctorj-diagram.version>
         <asciidoctor-diagram.version>2.3.1</asciidoctor-diagram.version>
+        <asciidoctor-diagram-plantuml.version>1.2024.5</asciidoctor-diagram-plantuml.version>
+        <rouge.version>4.3.0</rouge.version>
         <asciidoctor-multipage.version>0.0.19</asciidoctor-multipage.version>
         <asciidoctor-comment-links.version>0.0.2</asciidoctor-comment-links.version>
         <asciidoclet.version>2.0.0</asciidoclet.version>
@@ -47,6 +49,18 @@
     <dependencies>
         <dependency>
             <groupId>rubygems</groupId>
+            <artifactId>rouge</artifactId>
+            <version>${rouge.version}</version>
+            <type>gem</type>
+        </dependency>
+        <dependency>
+            <groupId>rubygems</groupId>
+            <artifactId>asciidoctor-diagram-plantuml</artifactId>
+            <version>${asciidoctor-diagram-plantuml.version}</version>
+            <type>gem</type>
+        </dependency>
+        <dependency>
+            <groupId>rubygems</groupId>
             <artifactId>asciidoctor-diagram</artifactId>
             <version>${asciidoctor-diagram.version}</version>
             <type>gem</type>
@@ -54,6 +68,10 @@
                 <exclusion>
                     <groupId>rubygems</groupId>
                     <artifactId>asciidoctor</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>rubygems</groupId>
+                    <artifactId>asciidoctor-diagram-plantuml</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -198,12 +216,12 @@
                         <configuration>
                             <rules>
                                 <requireMavenVersion>
-                                    <version>3.6.1</version>
+                                    <version>3.8.8</version>
                                 </requireMavenVersion>
                                 <requireJavaVersion>
                                     <version>${java.version}</version>
                                     <message>
-                                        <![CDATA[必须使用 Maven 3.6.1+ 和 JDK 1.8+ 构建。]]>
+                                        <![CDATA[必须使用 Maven 3.8.8+ 和 JDK 21+ 构建。]]>
                                     </message>
                                 </requireJavaVersion>
                             </rules>
