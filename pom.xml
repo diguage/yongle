@@ -768,6 +768,7 @@
                         <image_attr>align="center",width=100%</image_attr>
                         <diagram_attr>format=svg,align="center",width=90%</diagram_attr>
                         <plantumlconfig>${project.basedir}/cfg/plantuml.cfg</plantumlconfig>
+                        <iconfont-cdn>//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css</iconfont-cdn>
                     </attributes>
                 </configuration>
                 <executions>
