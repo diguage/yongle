@@ -96,7 +96,7 @@ jobs:
           # https://github.com/parcel-bundler/lightningcss
           npm install -g cssnano-cli
           # Multiple HTML page
-          cd target/docs/multipage/assets/styles
+          cd target/docs/
           for f in `find . -name "*.css"`;
           do
             if [[ $f == *asciidoctor.css ]]; then
@@ -115,7 +115,7 @@ jobs:
           # https://github.com/mishoo/UglifyJS
           npm install uglify-js -g
           # Multiple HTML page
-          cd target/docs/multipage/assets/scripts
+          cd target/docs/
           for f in `find . -name "*.js"`;
           do
             fn="${f%.*}.min.css";
