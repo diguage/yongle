@@ -87,8 +87,12 @@ jobs:
       - name: Add Tab Resource 🌗
         run: |
           cp -R docs/assets target/docs/multipage/
-          cd target/docs/multipage/
-          sed -i 's/src="asciidoctor-tabs.js"/src="assets\/scripts\/asciidoctor-tabs.js"/g' *.html
+          cp -R docs/assets target/docs/html/
+          cd target/docs/
+          for file in `find . -name "*.html"`;
+          do
+            sed -i 's/src="asciidoctor-tabs.js"/src="assets\/scripts\/asciidoctor-tabs.js"/g' $file
+          done
 
       # https://goalsmashers.github.io/css-minification-benchmark/
       - name: Compress CSS 🍭
