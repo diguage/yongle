@@ -1,4 +1,6 @@
 @startuml
+header D瓜哥 · ""https://www.diguage.com""
+
 title "**观察者模式**"
 
 abstract class Subject {
@@ -26,5 +28,5 @@ Observer <|-- ConcreteObserver
 
 ConcreteObserver "-subject" o-left- ConcreteSubject
 
-footer D瓜哥 · https://www.diguage.com · 出品
+footer D瓜哥 · ""https://www.diguage.com"" · 出品
 @enduml
