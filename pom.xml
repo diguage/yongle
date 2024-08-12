@@ -13,13 +13,15 @@
     <url>https://www.diguage.com/</url>
 
     <properties>
+        <checkstyle.version>10.17.0</checkstyle.version>
+        <maven-checkstyle-plugin.version>3.4.0</maven-checkstyle-plugin.version>
         <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
         <maven-javadoc-plugin.version>3.8.0</maven-javadoc-plugin.version>
         <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
         <extra-enforcer-rules.version>1.8.0</extra-enforcer-rules.version>
 
-        <asciidoctorj.version>3.0.0-alpha.2</asciidoctorj.version>
-        <asciidoctorj-pdf.version>2.3.17</asciidoctorj-pdf.version>
+        <asciidoctorj.version>3.0.0-beta.1</asciidoctorj.version>
+        <asciidoctorj-pdf.version>2.3.18</asciidoctorj-pdf.version>
         <asciidoctorj-epub3.version>2.1.3</asciidoctorj-epub3.version>
         <asciidoctorj-diagram.version>2.3.1</asciidoctorj-diagram.version>
         <asciidoctor-diagram.version>2.3.1</asciidoctor-diagram.version>
@@ -67,28 +69,28 @@
                 </exclusion>
             </exclusions>
         </dependency>
-         <dependency>
-             <groupId>rubygems</groupId>
-             <artifactId>asciidoctor-diagram-plantuml</artifactId>
-             <version>${asciidoctor-diagram-plantuml.version}</version>
-             <type>gem</type>
-         </dependency>
-         <dependency>
-             <groupId>rubygems</groupId>
-             <artifactId>asciidoctor-diagram</artifactId>
-             <version>${asciidoctor-diagram.version}</version>
-             <type>gem</type>
-             <exclusions>
-                 <exclusion>
-                     <groupId>rubygems</groupId>
-                     <artifactId>asciidoctor</artifactId>
-                 </exclusion>
-                 <exclusion>
-                     <groupId>rubygems</groupId>
-                     <artifactId>asciidoctor-diagram-plantuml</artifactId>
-                 </exclusion>
-             </exclusions>
-         </dependency>
+        <!-- <dependency>-->
+        <!--     <groupId>rubygems</groupId>-->
+        <!--     <artifactId>asciidoctor-diagram-plantuml</artifactId>-->
+        <!--     <version>${asciidoctor-diagram-plantuml.version}</version>-->
+        <!--     <type>gem</type>-->
+        <!-- </dependency>-->
+        <!-- <dependency>-->
+        <!--     <groupId>rubygems</groupId>-->
+        <!--     <artifactId>asciidoctor-diagram</artifactId>-->
+        <!--     <version>${asciidoctor-diagram.version}</version>-->
+        <!--     <type>gem</type>-->
+        <!--     <exclusions>-->
+        <!--         <exclusion>-->
+        <!--             <groupId>rubygems</groupId>-->
+        <!--             <artifactId>asciidoctor</artifactId>-->
+        <!--         </exclusion>-->
+        <!--         <exclusion>-->
+        <!--             <groupId>rubygems</groupId>-->
+        <!--             <artifactId>asciidoctor-diagram-plantuml</artifactId>-->
+        <!--         </exclusion>-->
+        <!--     </exclusions>-->
+        <!-- </dependency>-->
         <dependency>
             <groupId>rubygems</groupId>
             <artifactId>asciidoctor-multipage</artifactId>
@@ -890,6 +892,30 @@
                         <groupId>org.jruby</groupId>
                         <artifactId>jruby</artifactId>
                         <version>${jruby.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <!-- mvn checkstyle:checkstyle -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <!-- https://maven.apache.org/plugins/maven-checkstyle-plugin/checkstyle-mojo.html -->
+                <!-- Properties for "mvn checkstyle:checkstyle" to execute without mvn build -->
+                <configuration>
+                    <configLocation>google_checks.xml</configLocation>
+                    <consoleOutput>true</consoleOutput>
+                    <!-- failsOnError is not effective
+                         as in google_checks all violations as warning -->
+                    <failsOnError>true</failsOnError>
+                    <!-- linkXRef=false to avoid WARNING 'Unable to locate Source XRef to link to' -->
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
