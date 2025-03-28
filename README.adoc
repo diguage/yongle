@@ -51,12 +51,12 @@ TIP: **公众号的微信号是: `jikerizhi`**。__因为众所周知的原因�
 [source,bash]
 ----
 $ wkhtmltopdf --page-size A4 \
-              --header-left "文档标题" \
-              --header-right "（`date '+%Y-%m-%d'`·试用版）" \
+              --header-left "[section]" \
+              --header-right "[subsection]" \
               --header-spacing 3 \
               --header-font-size 10 \
               --footer-spacing 4 \
-              --footer-left "D瓜哥 · https://www.diguage.com/" \
+              --footer-left "D瓜哥 · https://www.diguage.com" \
               --footer-right '[page] / [toPage]' \
               --footer-font-size 10 \
               --margin-top 25mm \
