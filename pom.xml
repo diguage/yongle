@@ -928,6 +928,11 @@
                         <version>${asciidoctorj-diagram.version}</version>
                     </dependency>
                     <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram-plantuml</artifactId>
+                        <version>1.2025.2</version>
+                    </dependency>
+                    <dependency>
                         <groupId>org.jruby</groupId>
                         <artifactId>jruby</artifactId>
                         <version>${jruby.version}</version>
