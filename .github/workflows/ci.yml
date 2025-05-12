@@ -84,23 +84,19 @@ jobs:
             done
             fi
           done
-          # echo -e "[seqdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" > $HOME/.blockdiagrc
-          # echo -e "\n[blockdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
-          # echo -e "\n[actdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
-          # echo -e "\n[nwdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
-          # Check result
-          ls -lh $HOME/.fonts 
-          fc-list
-          # cat $HOME/.blockdiagrc
-
-      - name: Build 🏗
-        run: mvn clean package
 
       - name: Check font 🔍
         run: |
+          echo -e "[seqdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" > $HOME/.blockdiagrc
+          echo -e "\n[blockdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
+          echo -e "\n[actdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
+          echo -e "\n[nwdiag]\nfontpath = $HOME/.fonts/SourceHanSerifSC-Regular.otf" >> $HOME/.blockdiagrc
           ls -lh $HOME/.fonts 
           fc-list
           cat $HOME/.blockdiagrc
+
+      - name: Build 🏗
+        run: mvn clean package
 
       - name: Add Reward Qrcode 💰
         run: |
