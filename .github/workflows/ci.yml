@@ -108,7 +108,7 @@ jobs:
           cp -R docs/assets target/docs/multipage/
           cp -R docs/assets target/docs/html/
           cd target/docs/
-          sed -i 's@src="asciidoctor-tabs.js"@src="assets/scripts/asciidoctor-tabs.js"@g' *.html
+          find . -name "*.html" | xargs -I {} sed -i 's@src="asciidoctor-tabs.js"@src="assets/scripts/asciidoctor-tabs.js"@g' {}
 
       - name: Add Scroll TOC JS 🐌
         run: |
