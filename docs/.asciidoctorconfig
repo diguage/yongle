@@ -10,10 +10,9 @@
 
 :diagram_attr: format=svg,align="center",width=100%
 
-:sourcedir: {asciidoctorconfigdir}/../src/main/java/com/diguage/truman
 :source_attr: linenums,indent=0,subs="attributes,verbatim"
 :java_src_attr: source%nowrap,java,{source_attr}
 
-:source_basedir: {asciidoctorconfigdir}/../src/main/java/com/diguage
+:sourcedir: {asciidoctorconfigdir}/../src/main/java/com/diguage/yongle
 :project_basedir: {asciidoctorconfigdir}/..
 

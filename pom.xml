@@ -37,7 +37,7 @@
         <gem-maven-plugin.version>3.0.5</gem-maven-plugin.version>
         <download-maven-plugin.version>1.13.0</download-maven-plugin.version>
         <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
-        <jruby.version>10.0.0.0</jruby.version>
+        <jruby.version>10.0.0.1</jruby.version>
         <gem.path>${project.basedir}/cfg/gems</gem.path>
         <pdf-fonts.path>${project.basedir}/cfg/fonts</pdf-fonts.path>
         <pdf-fonts.baseuri>https://github.com/diguage/open-fonts/releases/download/latest</pdf-fonts.baseuri>
@@ -523,10 +523,10 @@
                     <!-- Install required gems in target directory -->
                     <execution>
                         <id>install-gems</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>initialize</goal>
                         </goals>
-                        <phase>initialize</phase>
                     </execution>
                 </executions>
                 <dependencies>
@@ -549,7 +549,7 @@
                 <executions>
                     <execution>
                         <id>install-font-NotoEmoji-Regular</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -563,7 +563,7 @@
                     <!-- 等宽字体 -->
                     <execution>
                         <id>install-font-SourceCodePro-Regular</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -575,7 +575,7 @@
                     </execution>
                     <execution>
                         <id>install-font-SourceCodePro-Semibold</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -587,7 +587,7 @@
                     </execution>
                     <execution>
                         <id>install-font-SourceCodePro-It</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -599,7 +599,7 @@
                     </execution>
                     <execution>
                         <id>install-font-SourceCodePro-BoldIt</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -612,7 +612,7 @@
                     <!-- JetBrains Mono -->
                     <execution>
                         <id>install-font-JetBrainsMono-Regular</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -624,7 +624,7 @@
                     </execution>
                     <execution>
                         <id>install-font-JetBrainsMono-SemiBold</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -636,7 +636,7 @@
                     </execution>
                     <execution>
                         <id>install-font-JetBrainsMono-Bold</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -650,7 +650,7 @@
                     <!-- 中文字体 -->
                     <execution>
                         <id>install-font-SourceHanSerifSC-Regular</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -662,7 +662,7 @@
                     </execution>
                     <execution>
                         <id>install-font-SourceHanSerifSC-Bold</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -674,7 +674,7 @@
                     </execution>
                     <execution>
                         <id>install-font-SourceHanSerifSC-Medium</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -686,7 +686,7 @@
                     </execution>
                     <execution>
                         <id>install-font-SourceHanSerifSC-SemiBold</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -699,7 +699,7 @@
 
                     <execution>
                         <id>install-font-SourceHanSansSC-Regular</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -711,7 +711,7 @@
                     </execution>
                     <execution>
                         <id>install-font-SourceHanSansSC-Bold</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -723,7 +723,7 @@
                     </execution>
                     <execution>
                         <id>install-font-SourceHanSansSC-Medium</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -735,7 +735,7 @@
                     </execution>
                     <execution>
                         <id>install-font-SourceHanSansSC-Heavy</id>
-                        <phase>initialize</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>wget</goal>
                         </goals>
@@ -794,9 +794,8 @@
                         <sectanchors>true</sectanchors>
                         <graphvizdot>/usr/local/bin/dot</graphvizdot>
                         <project_basedir>${project.basedir}</project_basedir>
-                        <source_basedir>${project.basedir}/src/main/java/com/diguage</source_basedir>
                         <source_attr>linenums,indent=0,subs="attributes,verbatim,quotes"</source_attr>
-                        <java_source_attr>source%nowrap,java,{source_attr}</java_source_attr>
+                        <java_src_attr>source%nowrap,java,{source_attr}</java_src_attr>
                         <html_src_attr>source%nowrap,html,{source_attr}</html_src_attr>
                         <image_attr>align="center",width=95%</image_attr>
                         <diagram_attr>format=svg,align="center",width=95%</diagram_attr>
@@ -850,59 +849,59 @@
                         </configuration>
                     </execution>
 
-                     <execution>
-                         <id>generate-epub</id>
-                         <phase>package</phase>
-                         <goals>
-                             <goal>process-asciidoc</goal>
-                         </goals>
-                         <configuration>
-                             <backend>epub3</backend>
-                             <sourceDocumentName>index.adoc</sourceDocumentName>
-                             <outputDirectory>${project.build.directory}/docs/epub</outputDirectory>
-                             <attributes>
-                                 <source-highlighter>coderay</source-highlighter>
-                             </attributes>
-                             <requires>
-                                 <require>asciidoctor-diagram</require>
-                             </requires>
-                         </configuration>
-                     </execution>
+                    <!-- <execution>-->
+                    <!--     <id>generate-epub</id>-->
+                    <!--     <phase>package</phase>-->
+                    <!--     <goals>-->
+                    <!--         <goal>process-asciidoc</goal>-->
+                    <!--     </goals>-->
+                    <!--     <configuration>-->
+                    <!--         <backend>epub3</backend>-->
+                    <!--         <sourceDocumentName>index.adoc</sourceDocumentName>-->
+                    <!--         <outputDirectory>${project.build.directory}/docs/epub</outputDirectory>-->
+                    <!--         <attributes>-->
+                    <!--             <source-highlighter>coderay</source-highlighter>-->
+                    <!--         </attributes>-->
+                    <!--         <requires>-->
+                    <!--             <require>asciidoctor-diagram</require>-->
+                    <!--         </requires>-->
+                    <!--     </configuration>-->
+                    <!-- </execution>-->
 
-                     <execution>
-                         <id>generate-pdf</id>
-                         <phase>package</phase>
-                         <goals>
-                             <goal>process-asciidoc</goal>
-                         </goals>
-                         <configuration>
-                             <backend>pdf</backend>
-                             <outputDirectory>${project.build.directory}/docs/pdf</outputDirectory>
-                             <attributes>
-                                 <allow-uri-read/>
-                                 <diagram_attr>format=svg,align="center",width=90%</diagram_attr>
-                                 <pdf-fontsdir>${project.basedir}/cfg/fonts</pdf-fontsdir>
-                                 <pdf-themesdir>${project.basedir}/cfg/theme</pdf-themesdir>
-                                 <!-- Set Source theme -->
-                                 <pdf-theme>Source</pdf-theme>
-                                 <pagenums/>
-                                 <toc/>
-                                 <idprefix/>
-                                 <idseparator>-</idseparator>
-                                 <!-- Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters -->
-                                 <scripts>cjk</scripts>
-                                 <pdf-version>1.7</pdf-version>
-                                 <rouge-style>github</rouge-style>
-                                 <!--<media>screen</media>-->
-                                 <!--<optimize>screen</optimize>-->
-                                 <!--<media>prepress</media>-->
-                                 <!--<optimize>prepress</optimize>-->
-                             </attributes>
-                             <requires>
-                                 <require>asciidoctor-diagram</require>
-                             </requires>
-                         </configuration>
-                     </execution>
+                    <!-- <execution>-->
+                    <!--     <id>generate-pdf</id>-->
+                    <!--     <phase>package</phase>-->
+                    <!--     <goals>-->
+                    <!--         <goal>process-asciidoc</goal>-->
+                    <!--     </goals>-->
+                    <!--     <configuration>-->
+                    <!--         <backend>pdf</backend>-->
+                    <!--         <outputDirectory>${project.build.directory}/docs/pdf</outputDirectory>-->
+                    <!--         <attributes>-->
+                    <!--             <allow-uri-read/>-->
+                    <!--             <diagram_attr>format=svg,align="center",width=90%</diagram_attr>-->
+                    <!--             <pdf-fontsdir>${project.basedir}/cfg/fonts</pdf-fontsdir>-->
+                    <!--             <pdf-themesdir>${project.basedir}/cfg/theme</pdf-themesdir>-->
+                    <!--             &lt;!&ndash; Set Source theme &ndash;&gt;-->
+                    <!--             <pdf-theme>Source</pdf-theme>-->
+                    <!--             <pagenums/>-->
+                    <!--             <toc/>-->
+                    <!--             <idprefix/>-->
+                    <!--             <idseparator>-</idseparator>-->
+                    <!--             &lt;!&ndash; Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters &ndash;&gt;-->
+                    <!--             <scripts>cjk</scripts>-->
+                    <!--             <pdf-version>1.7</pdf-version>-->
+                    <!--             <rouge-style>github</rouge-style>-->
+                    <!--             &lt;!&ndash;<media>screen</media>&ndash;&gt;-->
+                    <!--             &lt;!&ndash;<optimize>screen</optimize>&ndash;&gt;-->
+                    <!--             &lt;!&ndash;<media>prepress</media>&ndash;&gt;-->
+                    <!--             &lt;!&ndash;<optimize>prepress</optimize>&ndash;&gt;-->
+                    <!--         </attributes>-->
+                    <!--         <requires>-->
+                    <!--             <require>asciidoctor-diagram</require>-->
+                    <!--         </requires>-->
+                    <!--     </configuration>-->
+                    <!-- </execution>-->
                 </executions>
                 <dependencies>
                     <dependency>

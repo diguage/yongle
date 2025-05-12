@@ -7,9 +7,9 @@
 
 == 代码高亮
 
-[{java_source_attr}]
+[{java_src_attr}]
 ----
-include::{source_basedir}/yongle/HelloWorld.java[]
+include::{sourcedir}/HelloWorld.java[]
 ----
 
 == Tab 页
@@ -33,7 +33,7 @@ Contains more than one block.
 Tab D::
 +
 --
-[source,java]
+[{java_src_attr}]
 ----
 public class Test {
     public static void main(String[] args) {
