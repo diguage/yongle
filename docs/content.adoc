@@ -65,6 +65,8 @@ Tab B:: Just text.
 
 == 图片
 
+image::assets/images/asciidoc.jpg[{image_attr}]
+
 === 外部图片
 
 plantuml::assets/diagrams/observer.puml[{diagram_attr}]
