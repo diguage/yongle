@@ -775,8 +775,8 @@
                     <sourceDirectory>docs</sourceDirectory>
                     <sourceDocumentName>index.adoc</sourceDocumentName>
                     <attributes>
+                        <project_basedir>${maven.multiModuleProjectDirectory}</project_basedir>
                         <sourcedir>${project.build.sourceDirectory}/com/diguage/yongle</sourcedir>
-                        <basedir>${project.basedir}</basedir>
                         <doctype>book</doctype>
                         <stem>latexmath</stem>
                         <source-highlighter>rouge</source-highlighter>
@@ -793,7 +793,6 @@
                         <sectnumlevels>3</sectnumlevels>
                         <sectanchors>true</sectanchors>
                         <graphvizdot>/usr/local/bin/dot</graphvizdot>
-                        <project_basedir>${project.basedir}</project_basedir>
                         <source_attr>linenums,indent=0,subs="attributes,verbatim,quotes"</source_attr>
                         <java_src_attr>source%nowrap,java,{source_attr}</java_src_attr>
                         <html_src_attr>source%nowrap,html,{source_attr}</html_src_attr>
