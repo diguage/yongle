@@ -31,6 +31,7 @@
         <asciidoctor-multipage.version>0.0.19</asciidoctor-multipage.version>
         <asciidoctor-tabs.version>1.0.0.beta.6</asciidoctor-tabs.version>
         <rouge.version>4.3.0</rouge.version>
+        <asciidoctor-kroki.version>0.10.0</asciidoctor-kroki.version>
         <asciidoclet.version>2.0.0</asciidoclet.version>
         <asciidoctor-maven-plugin.version>3.2.0</asciidoctor-maven-plugin.version>
         <mavengem-wagon.version>2.0.2</mavengem-wagon.version>
@@ -39,7 +40,7 @@
         <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
         <jruby.version>10.0.0.1</jruby.version>
         <gem.path>${project.basedir}/cfg/gems</gem.path>
-        <pdf-fonts.path>${project.basedir}/cfg/fonts</pdf-fonts.path>
+        <pdf-fonts.path>${user.home}/.fonts</pdf-fonts.path>
         <pdf-fonts.baseuri>https://github.com/diguage/open-fonts/releases/download/latest</pdf-fonts.baseuri>
 
         <java.version>21</java.version>
@@ -415,6 +416,18 @@
         <profile>
             <id>asciidoc</id>
             <dependencies>
+                <dependency>
+                    <groupId>rubygems</groupId>
+                    <artifactId>asciidoctor-kroki</artifactId>
+                    <version>${asciidoctor-kroki.version}</version>
+                    <type>gem</type>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>rubygems</groupId>
+                            <artifactId>asciidoctor</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
                 <dependency>
                     <groupId>rubygems</groupId>
                     <artifactId>rouge</artifactId>
@@ -839,8 +852,11 @@
                                 <html_src_attr>source%nowrap,html,{source_attr}</html_src_attr>
                                 <image_attr>align="center",width=95%</image_attr>
                                 <diagram_attr>format=svg,align="center",width=95%</diagram_attr>
+                                <diagram_dir>${project.basedir}/docs/assets/diagrams</diagram_dir>
                                 <plantumlconfig>${project.basedir}/cfg/plantuml.cfg</plantumlconfig>
                                 <iconfont-cdn>//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css</iconfont-cdn>
+                                <kroki-fetch-diagram>true</kroki-fetch-diagram>
+                                <kroki-plantuml-include-paths>${project.basedir}/docs/assets/diagrams</kroki-plantuml-include-paths>
                             </attributes>
                         </configuration>
                         <executions>
@@ -856,7 +872,7 @@
                                     <gemPath>${gem.path}</gemPath>
                                     <requires>
                                         <require>asciidoctor-tabs</require>
-                                        <require>asciidoctor-diagram</require>
+                                        <require>asciidoctor-kroki</require>
                                         <require>asciidoctor-multipage</require>
                                         <require>asciidoctor-comment-links</require>
                                     </requires>
@@ -883,7 +899,7 @@
                                     <gemPath>${gem.path}</gemPath>
                                     <requires>
                                         <require>asciidoctor-tabs</require>
-                                        <require>asciidoctor-diagram</require>
+                                        <require>asciidoctor-kroki</require>
                                         <require>asciidoctor-comment-links</require>
                                     </requires>
                                 </configuration>
@@ -903,7 +919,7 @@
                             <!--             <source-highlighter>coderay</source-highlighter>-->
                             <!--         </attributes>-->
                             <!--         <requires>-->
-                            <!--             <require>asciidoctor-diagram</require>-->
+                            <!--             <require>asciidoctor-kroki</require>-->
                             <!--         </requires>-->
                             <!--     </configuration>-->
                             <!-- </execution>-->
@@ -938,7 +954,7 @@
                             <!--             &lt;!&ndash;<optimize>prepress</optimize>&ndash;&gt;-->
                             <!--         </attributes>-->
                             <!--         <requires>-->
-                            <!--             <require>asciidoctor-diagram</require>-->
+                            <!--             <require>asciidoctor-kroki</require>-->
                             <!--         </requires>-->
                             <!--     </configuration>-->
                             <!-- </execution>-->
