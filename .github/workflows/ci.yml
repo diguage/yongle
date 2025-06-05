@@ -108,27 +108,6 @@ jobs:
       #          echo " "
       #          find . -type f -name "*.png" | xargs ls -l -h
 
-      - name: Install Graphviz 🐰
-        run: |
-          sudo apt update -y -m
-          sudo apt install -y python3-pip
-          # https://graphviz.org/
-          sudo apt install -y graphviz
-          # http://blockdiag.com/en/seqdiag/index.html
-          pip3 install seqdiag
-          # http://blockdiag.com/en/blockdiag/index.html
-          pip3 install blockdiag
-          # http://blockdiag.com/en/actdiag/index.html
-          pip3 install actdiag
-          # http://blockdiag.com/en/nwdiag/index.html
-          pip3 install nwdiag
-          # https://github.com/Deep-Symmetry/bytefield-svg
-          npm install -g bytefield-svg
-          # https://github.com/gtudan/bpmn-js-cmd
-          npm install -g bpmn-js-cmd
-          # https://plantuml.com/zh/
-          sudo apt -y install plantuml
-
       - name: Install font 🎃
         run: |
           mkdir $HOME/.fonts
@@ -151,18 +130,20 @@ jobs:
                   'https://github.com/diguage/open-fonts/releases/download/latest/SourceHanSansSC-Medium.otf' \
                   'https://github.com/diguage/open-fonts/releases/download/latest/SourceHanSansSC-Heavy.otf' \
                   'https://github.com/diguage/open-fonts/releases/download/latest/Symbola.ttf')
+          echo -e "$(date +%T) start to download fonts...\n"
           for font in "${fonts[@]}"
           do
             name=`echo $font | awk -F'/' '{print $NF}'`
             if [ -f "$name" ]; then
               echo "$name exists."
             else
-            until wget $font
-            do
-              echo "Try to download $name again..."
-            done
+              wget -c --tries=5 --retry-connrefused --waitretry=5 --timeout=10 $font 1>/dev/null 2>&1 &
             fi
           done
+          
+          wait
+          echo -e "$(date +%T) finish downloading fonts...\n"
+          ls -lh
 
       - name: Check font 🔍
         run: |
@@ -173,6 +154,27 @@ jobs:
           ls -lh $HOME/.fonts 
           fc-list
           cat $HOME/.blockdiagrc
+
+      - name: Install Graphviz 🐰
+        run: |
+          sudo apt update -y -m
+          sudo apt install -y python3-pip
+          # https://graphviz.org/
+          sudo apt install -y graphviz
+          # http://blockdiag.com/en/seqdiag/index.html
+          pip3 install seqdiag
+          # http://blockdiag.com/en/blockdiag/index.html
+          pip3 install blockdiag
+          # http://blockdiag.com/en/actdiag/index.html
+          pip3 install actdiag
+          # http://blockdiag.com/en/nwdiag/index.html
+          pip3 install nwdiag
+          # https://github.com/Deep-Symmetry/bytefield-svg
+          npm install -g bytefield-svg
+          # https://github.com/gtudan/bpmn-js-cmd
+          npm install -g bpmn-js-cmd
+          # https://plantuml.com/zh/
+          sudo apt -y install plantuml
 
       - name: Build 🏗
         run: mvn clean package -Pasciidoc
