@@ -67,6 +67,8 @@ Tab B:: Just text.
 
 image::assets/images/asciidoc.jpg[{image_attr}]
 
+https://kroki.io/examples.html[Kroki! Examples^] -- Kroki 支持的各种图。
+
 === 引用外部图片： PlantUML
 
 plantuml::{diagram_dir}/observer.puml[{diagram_attr}]
@@ -135,7 +137,7 @@ footer D瓜哥 · https://www.diguage.com · 出品
 
 === GraphViz
 
-[graphviz]
+[graphviz, {diagram_attr}]
 ....
 digraph foo {
   node [style=rounded]
@@ -153,7 +155,7 @@ https://mermaid.js.org/intro/[Mermaid^] -- 图片类型挺丰富的
 
 ==== 饼图
 
-[mermaid,svg]
+[mermaid, {diagram_attr}]
 ....
 pie title Pets adopted by volunteers
     "Dogs" : 386
@@ -163,7 +165,7 @@ pie title Pets adopted by volunteers
 
 ==== 雷达图
 
-[mermaid,svg]
+[mermaid, {diagram_attr}]
 ....
 ---
 config:
@@ -187,7 +189,7 @@ radar-beta
 
 ==== 甘特图
 
-[mermaid,abcd-flowchart,svg]
+[mermaid, {diagram_attr}]
 ....
 gantt
     dateFormat  YYYY-MM-DD
@@ -224,7 +226,7 @@ gantt
 
 === blockdiag
 
-[blockdiag]
+[blockdiag, {diagram_attr}]
 ....
 blockdiag {
   Kroki -> generates -> "Block diagrams";
@@ -238,7 +240,7 @@ blockdiag {
 
 === ByteField
 
-[bytefield]
+[bytefield, {diagram_attr}]
 ....
 (defattrs :bg-green {:fill "#a0ffa0"})
 (defattrs :bg-yellow {:fill "#ffffa0"})
@@ -309,7 +311,7 @@ blockdiag {
 
 === ActDiag
 
-[actdiag]
+[actdiag, {diagram_attr}]
 ....
 actdiag {
   write -> convert -> image
@@ -328,7 +330,7 @@ actdiag {
 
 === NwDiag
 
-[nwdiag]
+[nwdiag, {diagram_attr}]
 ....
 nwdiag {
   network dmz {
@@ -351,7 +353,7 @@ nwdiag {
 
 === PacketDiag
 
-[packetdiag]
+[packetdiag, {diagram_attr}]
 ....
 packetdiag {
   colwidth = 32;
@@ -382,7 +384,7 @@ packetdiag {
 
 === C4 PlantUML
 
-[c4plantuml]
+[c4plantuml, {diagram_attr}]
 ....
 !include <C4/C4_Context>
 
@@ -403,7 +405,7 @@ Rel(banking_system, mainframe, "Uses")
 
 === Ditaa
 
-[ditaa]
+[ditaa, {diagram_attr}]
 ....
       +--------+
       |        |
@@ -434,7 +436,7 @@ Rel(banking_system, mainframe, "Uses")
 
 === TikZ
 
-[tikz]
+[tikz, {diagram_attr}]
 ....
 \documentclass{article}
 \usepackage{tikz}
@@ -534,7 +536,7 @@ Rel(banking_system, mainframe, "Uses")
 
 === Vega
 
-[vega]
+[vega, {diagram_attr}]
 ....
 {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
@@ -636,11 +638,11 @@ Rel(banking_system, mainframe, "Uses")
 
 === VegaLite
 
-vegalite::{diagram_dir}/chart.vlite[svg,role=chart,opts=interactive]
+vegalite::{diagram_dir}/chart.vlite[{diagram_attr}]
 
 === WaveDrom
 
-[wavedrom]
+[wavedrom, {diagram_attr}]
 ....
 { signal: [
   { name: "clk",         wave: "p.....|..." },
