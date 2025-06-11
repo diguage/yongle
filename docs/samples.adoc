@@ -1,4 +1,4 @@
-[#content-part]
+[#samples]
 = 正文部分
 
 这是正文部分！
