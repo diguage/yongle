@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 656 568" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>seqdiag {
+  edge_length = 200;  // default value is 192
+  default_fontsize = 14;  // default value is 11
+
+  browser  -&gt; webserver [label = "GET /seqdiag/svg/base64", note = "\n测试\n_"];
+  webserver  =&gt; processor [label = "Convert text to image", leftnote = "\n测试\n_"];
+  browser &lt;-- webserver;
+
+=== D瓜哥 · https://www.diguage.com · 出品 ===
+}</desc>
+  <rect fill="rgb(0,0,0)" height="394" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="127" y="152" />
+  <rect fill="rgb(0,0,0)" height="238" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="327" y="152" />
+  <rect fill="rgb(0,0,0)" height="66" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="527" y="244" />
+  <polygon fill="rgb(0,0,0)" points="347,126 380,126 388,134 388,178 347,178 347,126" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <polygon fill="rgb(0,0,0)" points="274,218 307,218 315,226 315,270 274,270 274,218" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="67" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="267" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="467" y="46" />
+  <path d="M 128 80 L 128 556" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="394" stroke="rgb(0,0,0)" width="8" x="124" y="146" />
+  <path d="M 328 80 L 328 556" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="238" stroke="rgb(0,0,0)" width="8" x="324" y="146" />
+  <path d="M 528 80 L 528 556" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="66" stroke="rgb(0,0,0)" width="8" x="524" y="238" />
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="59" x="128.5" y="67">browser</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="264" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="75" x="328.5" y="67">webserver</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="464" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="70" x="528.0" y="68">processor</text>
+  <path d="M 136 146 L 320 146" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="312,142 320,146 312,150" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(255,182,193)" points="344,120 377,120 385,128 385,172 344,172 344,120" stroke="rgb(0,0,0)" />
+  <path d="M 377 120 L 377 128" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 377 128 L 385 128" fill="none" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="4" x="354.0" y="135"> </text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="17" x="360.5" y="152">测试</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="7" x="355.5" y="170">_</text>
+  <path d="M 336 238 L 520 238" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="512,234 520,238 512,242" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(255,182,193)" points="271,212 304,212 312,220 312,264 271,264 271,212" stroke="rgb(0,0,0)" />
+  <path d="M 304 212 L 304 220" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 304 220 L 312 220" fill="none" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="4" x="281.0" y="227"> </text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="17" x="287.5" y="244">测试</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="7" x="282.5" y="262">_</text>
+  <path d="M 336 304 L 520 304" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <polygon fill="rgb(0,0,0)" points="344,300 336,304 344,308" stroke="rgb(0,0,0)" />
+  <path d="M 136 384 L 320 384" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="4" />
+  <polygon fill="rgb(0,0,0)" points="144,380 136,384 144,388" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="170" x="229.0" y="127">GET /seqdiag/svg/base6</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="9" x="148.5" y="142">4</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="155" x="421.5" y="234">Convert text to image</text>
+  <path d="M 40 482 L 192 482" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 40 486 L 192 486" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 464 482 L 616 482" fill="none" stroke="rgb(0,0,0)" />
+  <path d="M 464 486 L 616 486" fill="none" stroke="rgb(0,0,0)" />
+  <rect fill="rgb(208,208,208)" height="24" stroke="rgb(0,0,0)" width="272" x="192" y="472" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="14" font-style="normal" font-weight="normal" text-anchor="middle" textLength="252" x="328.0" y="492">D瓜哥 · https://www.diguage.com · 出品</text>
+</svg>
