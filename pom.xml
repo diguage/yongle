@@ -20,6 +20,7 @@
         <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
         <extra-enforcer-rules.version>1.10.0</extra-enforcer-rules.version>
+        <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
 
         <asciidoctorj.version>3.0.0</asciidoctorj.version>
         <asciidoctorj-pdf.version>2.3.19</asciidoctorj-pdf.version>
@@ -409,6 +410,34 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>jacoco-initialize</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report-aggregate</id>
+                        <goals>
+                            <goal>report</goal>
+                            <goal>report-aggregate</goal>
+                        </goals>
+                        <phase>verify</phase>
+                        <configuration>
+                            <includes>
+                                <include>target/classes/**/*</include>
+                                <include>target/classes/**</include>
+                                <include>**/*</include>
+                            </includes>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
@@ -829,7 +858,8 @@
                             <sourceDirectory>docs</sourceDirectory>
                             <sourceDocumentName>index.adoc</sourceDocumentName>
                             <attributes>
-                                <project_basedir>${maven.multiModuleProjectDirectory}</project_basedir>
+                                <!-- <project_basedir>${maven.multiModuleProjectDirectory}</project_basedir>-->
+                                <project_basedir>${project.basedir}</project_basedir>
                                 <sourcedir>${project.build.sourceDirectory}/com/diguage/yongle</sourcedir>
                                 <doctype>book</doctype>
                                 <stem>latexmath</stem>
