@@ -40,4 +40,10 @@ public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, D瓜哥 · https://www.diguage.com");
     }
+
+    // tag::hi[]
+    public void hi() {
+        System.out.println("Hello, D瓜哥 · https://www.diguage.com");
+    }
+    // end::hi[]
 }

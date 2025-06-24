@@ -1,5 +1,5 @@
 [#samples]
-= 正文部分
+= 示例 Sample
 
 这是正文部分！
 
@@ -10,6 +10,13 @@
 [{java_src_attr}]
 ----
 include::{sourcedir}/HelloWorld.java[]
+----
+
+引用代码片段：
+
+[{java_src_attr}]
+----
+include::{sourcedir}/HelloWorld.java[tag=hi]
 ----
 
 == Tab 页
