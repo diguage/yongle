@@ -878,8 +878,8 @@
                                 <sectanchors>true</sectanchors>
                                 <graphvizdot>/usr/local/bin/dot</graphvizdot>
                                 <source_attr>linenums,indent=0,subs="attributes,verbatim,quotes"</source_attr>
-                                <java_src_attr>source%nowrap,java,{source_attr}</java_src_attr>
-                                <html_src_attr>source%nowrap,html,{source_attr}</html_src_attr>
+                                <java_src_attr>source%nowrap,java,linenums,indent=0,subs="attributes,verbatim,quotes"</java_src_attr>
+                                <html_src_attr>source%nowrap,html,linenums,indent=0,subs="attributes,verbatim,quotes"</html_src_attr>
                                 <image_attr>align="center",width=95%</image_attr>
                                 <diagram_attr>format=svg,align="center",width=95%</diagram_attr>
                                 <diagram_dir>${project.basedir}/docs/assets/diagrams</diagram_dir>
