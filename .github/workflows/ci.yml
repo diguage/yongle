@@ -157,7 +157,10 @@ jobs:
       #          cat $HOME/.blockdiagrc
 
       - name: Build 🏗
-        run: mvn clean package -Pasciidoc
+        run: |
+          mvn gem:initialize -Pasciidoc
+          sed -i 's/\(symbolator\)/\1\n      tikz/' cfg/gems/gems/asciidoctor-kroki-0.10.0/lib/asciidoctor/extensions/asciidoctor_kroki/extension.rb
+          mvn clean package -Pasciidoc
 
       - name: Add Reward Qrcode 💰
         run: |
