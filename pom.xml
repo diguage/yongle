@@ -21,6 +21,7 @@
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
         <extra-enforcer-rules.version>1.10.0</extra-enforcer-rules.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
+        <spotless-maven-plugin.version>2.44.5</spotless-maven-plugin.version>
 
         <asciidoctorj.version>3.0.0</asciidoctorj.version>
         <asciidoctorj-pdf.version>2.3.19</asciidoctorj-pdf.version>
@@ -49,7 +50,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.release>${java.version}</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
@@ -803,10 +804,14 @@
                                 <version>${asciidoclet.version}</version>
                             </docletArtifact>
                             <additionalJOptions>
-                                <additionalJOption>-J--add-exports=jdk.javadoc/jdk.javadoc.internal.tool=ALL-UNNAMED</additionalJOption>
-                                <additionalJOption>-J--add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</additionalJOption>
-                                <additionalJOption>-J--add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</additionalJOption>
-                                <additionalJOption>-J--add-opens=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</additionalJOption>
+                                <additionalJOption>-J--add-exports=jdk.javadoc/jdk.javadoc.internal.tool=ALL-UNNAMED
+                                </additionalJOption>
+                                <additionalJOption>-J--add-opens=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED
+                                </additionalJOption>
+                                <additionalJOption>-J--add-opens=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED
+                                </additionalJOption>
+                                <additionalJOption>-J--add-opens=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED
+                                </additionalJOption>
                                 <additionalJOption>-Xdoclint:all,-html,-accessibility</additionalJOption>
                             </additionalJOptions>
                             <!--<overview>src/main/java/overview.adoc</overview>-->
@@ -823,7 +828,9 @@
                                 <additionalOption>--attribute "icons=font"</additionalOption>
                                 <additionalOption>--attribute "name=${project.name}"</additionalOption>
                                 <additionalOption>--attribute "version=${project.version}"</additionalOption>
-                                <additionalOption>--attribute "title-link=https://www.diguage.com/[${project.name}/${project.version} | 地瓜哥]"</additionalOption>
+                                <additionalOption>--attribute
+                                    "title-link=https://www.diguage.com/[${project.name}/${project.version} | 地瓜哥]"
+                                </additionalOption>
                             </additionalOptions>
                         </configuration>
                         <dependencies>
@@ -878,15 +885,19 @@
                                 <sectanchors>true</sectanchors>
                                 <graphvizdot>/usr/local/bin/dot</graphvizdot>
                                 <source_attr>linenums,indent=0,subs="attributes,verbatim,quotes"</source_attr>
-                                <java_src_attr>source%nowrap,java,linenums,indent=0,subs="attributes,verbatim,quotes"</java_src_attr>
-                                <html_src_attr>source%nowrap,html,linenums,indent=0,subs="attributes,verbatim,quotes"</html_src_attr>
+                                <java_src_attr>source%nowrap,java,linenums,indent=0,subs="attributes,verbatim,quotes"
+                                </java_src_attr>
+                                <html_src_attr>source%nowrap,html,linenums,indent=0,subs="attributes,verbatim,quotes"
+                                </html_src_attr>
                                 <image_attr>align="center",width=95%</image_attr>
                                 <diagram_attr>format=svg,align="center",width=95%</diagram_attr>
                                 <diagram_dir>${project.basedir}/docs/assets/diagrams</diagram_dir>
                                 <plantumlconfig>${project.basedir}/cfg/plantuml.cfg</plantumlconfig>
-                                <iconfont-cdn>//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css</iconfont-cdn>
+                                <iconfont-cdn>//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+                                </iconfont-cdn>
                                 <kroki-fetch-diagram>true</kroki-fetch-diagram>
-                                <kroki-plantuml-include-paths>${project.basedir}/docs/assets/diagrams</kroki-plantuml-include-paths>
+                                <kroki-plantuml-include-paths>${project.basedir}/docs/assets/diagrams
+                                </kroki-plantuml-include-paths>
                             </attributes>
                         </configuration>
                         <executions>
@@ -1017,6 +1028,83 @@
                                 <version>${jruby.version}</version>
                             </dependency>
                         </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- profile: spotless -->
+        <profile>
+            <id>jdk9-jdk11-spotless</id>
+            <activation>
+                <jdk>[1.8, 11)</jdk>
+            </activation>
+            <properties>
+                <palantirJavaFormat.version>1.1.0</palantirJavaFormat.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jdk11-jdk21-spotless</id>
+            <activation>
+                <jdk>[11, 21)</jdk>
+            </activation>
+            <properties>
+                <palantirJavaFormat.version>2.28.0</palantirJavaFormat.version>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>jdk21-spotless</id>
+            <activation>
+                <jdk>[21,)</jdk>
+            </activation>
+            <properties>
+                <palantirJavaFormat.version>2.69.0</palantirJavaFormat.version>
+            </properties>
+        </profile>
+        <profile>
+            <id>java11+</id>
+            <activation>
+                <jdk>[11,)</jdk>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.diffplug.spotless</groupId>
+                        <artifactId>spotless-maven-plugin</artifactId>
+                        <version>${spotless-maven-plugin.version}</version>
+                        <configuration>
+                            <encoding>${project.build.sourceEncoding}</encoding>
+                            <java>
+                                <excludes>
+                                    <!-- 排除示例 -->
+                                    <!-- <exclude>**/script/**</exclude> -->
+                                </excludes>
+                                <palantirJavaFormat>
+                                    <version>${palantirJavaFormat.version}</version>
+                                </palantirJavaFormat>
+                                <removeUnusedImports/>
+                                <trimTrailingWhitespace/>
+                                <endWithNewline/>
+                                <importOrder>
+                                    <order>,javax|java,\#</order>
+                                </importOrder>
+                                <formatAnnotations/>
+
+                                <!--<licenseHeader>-->
+                                <!--    &lt;!&ndash; or <file>${project.basedir}/license-header</file> &ndash;&gt;-->
+                                <!--    <content>/* (C)$YEAR */</content>  -->
+                                <!--</licenseHeader>-->
+                            </java>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>apply</goal>
+                                </goals>
+                                <phase>process-sources</phase>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
