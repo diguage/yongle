@@ -893,8 +893,7 @@
                                 <diagram_attr>format=svg,align="center",width=95%</diagram_attr>
                                 <diagram_dir>${project.basedir}/docs/assets/diagrams</diagram_dir>
                                 <plantumlconfig>${project.basedir}/cfg/plantuml.cfg</plantumlconfig>
-                                <iconfont-cdn>//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
-                                </iconfont-cdn>
+                                <iconfont-cdn>//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css</iconfont-cdn>
                                 <kroki-fetch-diagram>true</kroki-fetch-diagram>
                                 <kroki-plantuml-include-paths>${project.basedir}/docs/assets/diagrams
                                 </kroki-plantuml-include-paths>
