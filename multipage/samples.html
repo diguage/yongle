@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.23">
+<meta name="description" content="文档模板">
+<meta name="keywords" content="文档">
+<meta name="author" content="D瓜哥">
+<meta property="og:title" content="samples">
+<title>文档模板:  1. 示例 Sample</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<link rel="stylesheet" href="assets/styles/asciidoctor.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/styles/rouge-github.css">
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    p > code, strong > code, div.admonitionblock tr > td.content > code {
+        color: #d14 !important;
+        background-color: #f5f5f5 !important;
+        border: 1px solid #e1e1e8;
+        white-space: nowrap;
+        border-radius: 3px;
+    }
+</style>
+<link rel="stylesheet" href="assets/styles/asciidoctor-tabs.css">
+<style>.toc-current{color:#d14;font-size:130%;font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="samples" class="book toc2 toc-left">
+<div id="header">
+<h1>文档模板:  1. 示例 Sample</h1>
+<div class="details">
+<span id="author" class="author">D瓜哥</span><br>
+<span id="email" class="email"><a href="https://www.diguage.com" class="bare">https://www.diguage.com</a></span><br>
+<span id="revdate">2025-07-28</span>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">目录</div>
+<p><span class="toc-root"><a href="index.html">文档模板</a></span></p><ul class="sectlevel1">
+<li><a href="preface.html">前言</a>
+</li>
+<li><a href="samples.html"><span class="toc-current">1. 示例 Sample</span></a>
+<ul class="sectlevel2">
+<li><a href="samples.html#_代码高亮">1.1. 代码高亮</a>
+</li>
+<li><a href="samples.html#_tab_页">1.2. Tab 页</a>
+<ul class="sectlevel3">
+<li><a href="samples.html#_嵌套_tab_页">1.2.1. 嵌套 Tab 页</a>
+</li>
+</ul>
+</li>
+<li><a href="samples.html#_图片">1.3. 图片</a>
+<ul class="sectlevel3">
+<li><a href="samples.html#_引用外部图片_plantuml">1.3.1. 引用外部图片： PlantUML</a>
+</li>
+<li><a href="samples.html#_引用外部序列图seqdiag">1.3.2. 引用外部序列图：SeqDiag</a>
+</li>
+<li><a href="samples.html#_文内图片_plantuml">1.3.3. 文内图片： PlantUML</a>
+</li>
+<li><a href="samples.html#_graphviz">1.3.4. GraphViz</a>
+</li>
+<li><a href="samples.html#_mermaid">1.3.5. mermaid</a>
+</li>
+<li><a href="samples.html#_blockdiag">1.3.6. blockdiag</a>
+</li>
+<li><a href="samples.html#_bytefield">1.3.7. ByteField</a>
+</li>
+<li><a href="samples.html#_actdiag">1.3.8. ActDiag</a>
+</li>
+<li><a href="samples.html#_nwdiag">1.3.9. NwDiag</a>
+</li>
+<li><a href="samples.html#_packetdiag">1.3.10. PacketDiag</a>
+</li>
+<li><a href="samples.html#_c4_plantuml">1.3.11. C4 PlantUML</a>
+</li>
+<li><a href="samples.html#_ditaa">1.3.12. Ditaa</a>
+</li>
+<li><a href="samples.html#_tikz">1.3.13. TikZ</a>
+</li>
+<li><a href="samples.html#_vega">1.3.14. Vega</a>
+</li>
+<li><a href="samples.html#_vegalite">1.3.15. VegaLite</a>
+</li>
+<li><a href="samples.html#_wavedrom">1.3.16. WaveDrom</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="license.html">Appendix B: 版权声明</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content"><div class="sect2"><h3 id="_友情支持">友情支持</h3><div class="paragraph"><p>如果您觉得这个笔记对您有所帮助，看在D瓜哥码这么多字的辛苦上，请友情支持一下，D瓜哥感激不尽，😜</p></div><table class="tableblock frame-none grid-all stretch"><colgroup><col style="width: 50%;"><col style="width: 50%;"></colgroup><tbody><tr><td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="./assets/images/alipay.png" alt="支付宝" width="85%" title="支付宝"></span></p></td><td class="tableblock halign-center valign-top"><p class="tableblock"><span class="image"><img src="./assets/images/wxpay.jpg" alt="微信" width="85%" title="微信"></span></p></td></tr></tbody></table><div class="paragraph"><p>有些打赏的朋友希望可以加个好友，欢迎关注D 瓜哥的微信公众号，这样就可以通过公众号的回复直接给我发信息。</p></div><div class="paragraph"><p><span class="image"><img src="./assets/images/wx-jikerizhi.png" alt="wx jikerizhi" width="98%"></span></p></div><div class="admonitionblock tip"><table><tbody><tr><td class="icon"><i class="fa icon-tip" title="Tip"></i></td><td class="content"><strong>公众号的微信号是: <code>jikerizhi</code></strong>。<em>因为众所周知的原因，有时图片加载不出来。 如果图片加载不出来可以直接通过搜索微信号来查找我的公众号。</em></td></tr></tbody></table></div></div>
+<div class="sect1">
+<h2 id="samples"><a class="anchor" href="#samples"></a> 1. 示例 Sample</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>这是正文部分！</p>
+</div>
+<div class="paragraph">
+<p>行内高亮： <code>java</code>。</p>
+</div>
+<div class="sect2">
+<h3 id="_代码高亮"><a class="anchor" href="#_代码高亮"></a>1.1. 代码高亮</h3>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="java"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+</pre></td><td class="code"><pre><span class="kn">package</span> <span class="nn">com.diguage.yongle</span><span class="o">;</span>
+
+<span class="cm">/**
+ * = AsciiDoclet 示例文档
+ *
+ * 这是示例文档
+ *
+ * TIP: 这是一个提示文档！D瓜哥注：经测试，这个图标因为没有相关 CSS，不生效！
+ *
+ * == 示例代码
+ *
+ * [source,java]
+ * ----
+ * // @author <a href="https://www.diguage.com" class="cmt-link" target="_blank">D瓜哥 · https://www.diguage.com</a>
+ * public class HelloWorld {
+ *     public static void main(String[] args) {
+ *         System.out.println("Hello, <a href="https://www.diguage.com" class="cmt-link" target="_blank">D瓜哥 · https://www.diguage.com</a>");
+ *     }
+ * }
+ * ----
+ *
+ * == PlantUML diagram
+ *
+ * [plantuml,test]
+ * ----
+ * class BlockProcessor
+ * class DiagramBlock
+ * class DitaaBlock
+ * class PlantUmlBlock
+ *
+ * BlockProcessor &lt;|-- DiagramBlock
+ * DiagramBlock &lt;|-- DitaaBlock
+ * DiagramBlock &lt;|-- PlantUmlBlock
+ * ----
+ *
+ * @author <a href="https://www.diguage.com" class="cmt-link" target="_blank">D瓜哥 · https://www.diguage.com</a>
+ * @since 2022-07-21 20:50:45
+ */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloWorld</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello, <a href="https://www.diguage.com" class="cmt-link" target="_blank">D瓜哥 · https://www.diguage.com</a>"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="c1">// tag::hi[]</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">hi</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello, <a href="https://www.diguage.com" class="cmt-link" target="_blank">D瓜哥 · https://www.diguage.com</a>"</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="c1">// end::hi[]</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>引用代码片段：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="java"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">hi</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello, <a href="https://www.diguage.com" class="cmt-link" target="_blank">D瓜哥 · https://www.diguage.com</a>"</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tab_页"><a class="anchor" href="#_tab_页"></a>1.2. Tab 页</h3>
+<div id="_tabs_1" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_1_tab_a" class="tab">
+<p>Tab A</p>
+</li>
+<li id="_tabs_1_tab_b" class="tab">
+<p>Tab B</p>
+</li>
+<li id="_tabs_1_tab_c" class="tab">
+<p>Tab C</p>
+</li>
+<li id="_tabs_1_tab_d" class="tab">
+<p>Tab D</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_1_tab_a--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_a">
+<div class="paragraph">
+<p>Contents of Tab A.</p>
+</div>
+</div>
+<div id="_tabs_1_tab_b--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_b">
+<div class="paragraph">
+<p>Contents of Tab B.</p>
+</div>
+</div>
+<div id="_tabs_1_tab_c--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_c">
+<div class="paragraph">
+<p>Contents of Tab C.</p>
+</div>
+<div class="paragraph">
+<p>Contains more than one block.</p>
+</div>
+</div>
+<div id="_tabs_1_tab_d--panel" class="tabpanel" aria-labelledby="_tabs_1_tab_d">
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight nowrap"><code data-lang="java"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_嵌套_tab_页"><a class="anchor" href="#_嵌套_tab_页"></a>1.2.1. 嵌套 Tab 页</h4>
+<div id="_tabs_2" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_2_tab_a" class="tab">
+<p>Tab A</p>
+</li>
+<li id="_tabs_2_tab_b" class="tab">
+<p>Tab B</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_2_tab_a--panel" class="tabpanel" aria-labelledby="_tabs_2_tab_a">
+<div class="paragraph">
+<p>Selecting Tab A reveals a tabset with Tab Y and Tab Z.</p>
+</div>
+<div id="_tabs_3" class="openblock tabs is-loading">
+<div class="content">
+<div class="ulist tablist">
+<ul>
+<li id="_tabs_3_tab_y" class="tab">
+<p>Tab Y</p>
+</li>
+<li id="_tabs_3_tab_z" class="tab">
+<p>Tab Z</p>
+</li>
+</ul>
+</div>
+<div id="_tabs_3_tab_y--panel" class="tabpanel" aria-labelledby="_tabs_3_tab_y">
+<div class="paragraph">
+<p>Contents of Tab Y, nested inside Tab A.</p>
+</div>
+</div>
+<div id="_tabs_3_tab_z--panel" class="tabpanel" aria-labelledby="_tabs_3_tab_z">
+<div class="paragraph">
+<p>Contents of Tab Z, nested inside Tab A.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="_tabs_2_tab_b--panel" class="tabpanel" aria-labelledby="_tabs_2_tab_b">
+<div class="paragraph">
+<p>Just text.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_图片"><a class="anchor" href="#_图片"></a>1.3. 图片</h3>
+<div class="imageblock text-center">
+<div class="content">
+<img src="./assets/images/asciidoc.jpg" alt="asciidoc" width="95%">
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://kroki.io/examples.html" target="_blank" rel="noopener">Kroki! Examples</a>&#8201;&#8212;&#8201;Kroki 支持的各种图。</p>
+</div>
+<div class="sect3">
+<h4 id="_引用外部图片_plantuml"><a class="anchor" href="#_引用外部图片_plantuml"></a>1.3.1. 引用外部图片： PlantUML</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-24bf6d1e562cfe89c57e1020e8cb4de2d715bd3b1f2312c3aa2bb83dc6888b0b.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_引用外部序列图seqdiag"><a class="anchor" href="#_引用外部序列图seqdiag"></a>1.3.2. 引用外部序列图：SeqDiag</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-05f962610ee0291f87ff0c36bb6b4843a8ca0761d2b073a5c0e7d1528268cfe0.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_文内图片_plantuml"><a class="anchor" href="#_文内图片_plantuml"></a>1.3.3. 文内图片： PlantUML</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-921b4f330f5769cb13a4076cf01b1f3b6e17d0d010581bf9495e9928be1f7dde.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_graphviz"><a class="anchor" href="#_graphviz"></a>1.3.4. GraphViz</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-fe2d244500be0389f1fab862da5e77ce6b7144a67f57d09b01e354a8e1706a49.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_mermaid"><a class="anchor" href="#_mermaid"></a>1.3.5. mermaid</h4>
+<div class="paragraph">
+<p><a href="https://mermaid.js.org/intro/" target="_blank" rel="noopener">Mermaid</a>&#8201;&#8212;&#8201;图片类型挺丰富的</p>
+</div>
+<div class="sect4">
+<h5 id="_饼图"><a class="anchor" href="#_饼图"></a>饼图</h5>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-f37fc37641a1c03bcaae06b4205b1533f83997928d9e135499ba5081ed184fd6.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_雷达图"><a class="anchor" href="#_雷达图"></a>雷达图</h5>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-f594a5d0f00a5e46eb16f94935d7124649773731ebce16d1ece67061cee6ee69.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_甘特图"><a class="anchor" href="#_甘特图"></a>甘特图</h5>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-a8b42ad1f62f0a0220e049e31800da8c096365e208182238642f6d4e6c2d19f2.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_blockdiag"><a class="anchor" href="#_blockdiag"></a>1.3.6. blockdiag</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-aceeaad55fa92296882ce1b3c94b368f8443e875d47619fc3b22e3d48de6c37b.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_bytefield"><a class="anchor" href="#_bytefield"></a>1.3.7. ByteField</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-5094ca03fbe5af4410c2a20fa08a89ea31215353479462b552b3dbefd5efdcc5.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_actdiag"><a class="anchor" href="#_actdiag"></a>1.3.8. ActDiag</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-29845bf59d77dff51e4086ae33381fe563c959c32c7aa72f210afb7e94b61806.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_nwdiag"><a class="anchor" href="#_nwdiag"></a>1.3.9. NwDiag</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-821dd56abbd099f9489311cb80e334a963892cf608851d8ec8fa50b83a390c48.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_packetdiag"><a class="anchor" href="#_packetdiag"></a>1.3.10. PacketDiag</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-1d5f9b436cb3bd65f6f4a4fa90ef77cb4960468ad327aa1d74138d244bea3cd6.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c4_plantuml"><a class="anchor" href="#_c4_plantuml"></a>1.3.11. C4 PlantUML</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-966a8d2a2538d35026ed35a0aff67ac984fb7edd4e4f683d410ff86ddbca946e.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_ditaa"><a class="anchor" href="#_ditaa"></a>1.3.12. Ditaa</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-3cf1cf6d7af13c113746d6d2fae01dc31a6ef2076a624d0879b69157e750eba8.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_tikz"><a class="anchor" href="#_tikz"></a>1.3.13. TikZ</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-bdf6b9713c1e7815039b8eed8d3e25ffc4930190d1ace931f20e3e6120344b7c.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vega"><a class="anchor" href="#_vega"></a>1.3.14. Vega</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-bd474358e9e00952c899af9b2659981cfbd751af2a738b7da15548c15694446d.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_vegalite"><a class="anchor" href="#_vegalite"></a>1.3.15. VegaLite</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-54c2aa25846802e9c9588e8b03b4368d78927ed8e8f44d22ca0d6a873306b824.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_wavedrom"><a class="anchor" href="#_wavedrom"></a>1.3.16. WaveDrom</h4>
+<div class="imageblock text-center kroki">
+<div class="content">
+<img src="./diag-739da4cc6dbb49a6da840367e71315edf1bd62cb37b06126e75b9add54472f91.svg" alt="Diagram" width="95%">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>← Previous: <a href="preface.html">前言</a> | ↑ Up: <a href="index.html">文档模板</a> | Next: <a href="license.html">附录 A: 版权声明</a> →</p>
+</div>
+<script src="https://giscus.app/client.js" data-repo="diguage/yongle" data-repo-id="R_kgDOHsdJvA" data-category="General" data-category-id="DIC_kwDOHsdJvM4CrUsM" data-mapping="og:title" data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous" async></script>
+</div>
+<div id="footer">
+<div id="footer-text">
+最后更新时间 2025-07-28 15:02:59 UTC
+</div>
+</div>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "none" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+<script src="assets/scripts/asciidoctor-tabs.js"></script>
+<script src="assets/scripts/scroll-toc.js"></script></body>
+</html>
