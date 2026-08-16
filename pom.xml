@@ -15,37 +15,37 @@
     <properties>
         <checkstyle.version>10.23.1</checkstyle.version>
         <maven-checkstyle-plugin.version>3.6.0</maven-checkstyle-plugin.version>
-        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
-        <maven-javadoc-plugin.version>3.11.2</maven-javadoc-plugin.version>
-        <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
-        <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
-        <extra-enforcer-rules.version>1.10.0</extra-enforcer-rules.version>
+        <maven-compiler-plugin.version>3.15.0</maven-compiler-plugin.version>
+        <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
+        <maven-enforcer-plugin.version>3.6.3</maven-enforcer-plugin.version>
+        <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
+        <extra-enforcer-rules.version>1.12.0</extra-enforcer-rules.version>
         <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
-        <spotless-maven-plugin.version>2.44.5</spotless-maven-plugin.version>
+        <spotless-maven-plugin.version>3.9.0</spotless-maven-plugin.version>
 
-        <asciidoctorj.version>3.0.0</asciidoctorj.version>
-        <asciidoctorj-pdf.version>2.3.19</asciidoctorj-pdf.version>
-        <asciidoctorj-epub3.version>2.1.3</asciidoctorj-epub3.version>
-        <asciidoctorj-diagram.version>3.0.1</asciidoctorj-diagram.version>
-        <asciidoctor-diagram.version>3.0.1</asciidoctor-diagram.version>
-        <asciidoctor-diagram-plantuml.version>1.2025.3</asciidoctor-diagram-plantuml.version>
+        <asciidoctorj.version>3.0.1</asciidoctorj.version>
+        <asciidoctorj-pdf.version>2.3.23</asciidoctorj-pdf.version>
+        <asciidoctorj-epub3.version>2.2.0</asciidoctorj-epub3.version>
+        <asciidoctorj-diagram.version>3.2.1</asciidoctorj-diagram.version>
+        <asciidoctor-diagram.version>3.2.1</asciidoctor-diagram.version>
+        <!-- <asciidoctor-diagram-plantuml.version>1.2025.3</asciidoctor-diagram-plantuml.version>-->
         <asciidoctor-comment-links.version>0.0.2</asciidoctor-comment-links.version>
         <asciidoctor-multipage.version>0.0.19</asciidoctor-multipage.version>
         <asciidoctor-tabs.version>1.0.0.beta.6</asciidoctor-tabs.version>
-        <rouge.version>4.3.0</rouge.version>
-        <asciidoctor-kroki.version>0.10.0</asciidoctor-kroki.version>
+        <rouge.version>4.6.1</rouge.version>
+        <asciidoctor-kroki.version>1.0.1</asciidoctor-kroki.version>
         <asciidoclet.version>2.0.0</asciidoclet.version>
         <asciidoctor-maven-plugin.version>3.2.0</asciidoctor-maven-plugin.version>
-        <mavengem-wagon.version>2.0.2</mavengem-wagon.version>
+        <mavengem-wagon.version>2.0.3</mavengem-wagon.version>
         <gem-maven-plugin.version>3.0.6</gem-maven-plugin.version>
         <download-maven-plugin.version>1.13.0</download-maven-plugin.version>
-        <exec-maven-plugin.version>3.5.1</exec-maven-plugin.version>
-        <jruby.version>10.0.1.0</jruby.version>
+        <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
+        <jruby.version>10.1.1.0</jruby.version>
         <gem.path>${project.basedir}/cfg/gems</gem.path>
         <pdf-fonts.path>${user.home}/.fonts</pdf-fonts.path>
         <pdf-fonts.baseuri>https://github.com/diguage/open-fonts/releases/download/latest</pdf-fonts.baseuri>
 
-        <java.version>21</java.version>
+        <java.version>25</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.release>${java.version}</maven.compiler.release>
@@ -1031,40 +1031,10 @@
                 </plugins>
             </build>
         </profile>
-        <!-- profile: spotless -->
         <profile>
-            <id>jdk9-jdk11-spotless</id>
+            <id>java25+</id>
             <activation>
-                <jdk>[1.8, 11)</jdk>
-            </activation>
-            <properties>
-                <palantirJavaFormat.version>1.1.0</palantirJavaFormat.version>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>jdk11-jdk21-spotless</id>
-            <activation>
-                <jdk>[11, 21)</jdk>
-            </activation>
-            <properties>
-                <palantirJavaFormat.version>2.28.0</palantirJavaFormat.version>
-            </properties>
-        </profile>
-
-        <profile>
-            <id>jdk21-spotless</id>
-            <activation>
-                <jdk>[21,)</jdk>
-            </activation>
-            <properties>
-                <palantirJavaFormat.version>2.69.0</palantirJavaFormat.version>
-            </properties>
-        </profile>
-        <profile>
-            <id>java11+</id>
-            <activation>
-                <jdk>[11,)</jdk>
+                <jdk>[25,)</jdk>
             </activation>
             <build>
                 <plugins>
@@ -1080,7 +1050,9 @@
                                     <!-- <exclude>**/script/**</exclude> -->
                                 </excludes>
                                 <palantirJavaFormat>
-                                    <version>${palantirJavaFormat.version}</version>
+                                    <version>2.97.0</version>
+                                    <style>PALANTIR</style>              <!-- or AOSP/GOOGLE (optional) -->
+                                    <formatJavadoc>false</formatJavadoc> <!-- defaults to false (optional, requires at least Palantir 2.39.0) -->
                                 </palantirJavaFormat>
                                 <removeUnusedImports/>
                                 <trimTrailingWhitespace/>
